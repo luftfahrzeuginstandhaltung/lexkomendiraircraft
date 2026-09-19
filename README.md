@@ -1,4 +1,4 @@
-# ✈️ LexKomendirAirCraft — KOM-AK-X1-ALPHA
+# ✈️ LexKomendirAirCraft — AK-X1-ALPHA
 ### Desenvolvimento Independente · Engenharia Aeronáutica · Brasil 🇧🇷
 
 ---
