@@ -1,38 +1,57 @@
-# lexkomendiraircraft
 # ✈️ LexKomendirAirCraft — KOM-AK-X1-ALPHA
-### Caça Furtivo de Sexta Geração · Tecnologia Quântica · Manutenção de Aeronaves
-#### 🇧🇷 Do Brasil, ao mundo
+### Desenvolvimento Independente · Engenharia Aeronáutica · Brasil 🇧🇷
+
+---
+
+## 📱 Acesse o Projeto
+
+<p align="center">
+  <strong>Escaneie com a câmera do celular</strong><br>
+  <br>
+  <!-- COLOQUE A IMAGEM DO QR CODE ABAIXO -->
+  <img src="assets/qr_code.png" alt="QR Code" width="200">
+  <br>
+  🔗 <a href="https://github.com/luftfahrzeuginstandhaltung/LexKomendirAirCraft-">github.com/luftfahrzeuginstandhaltung/LexKomendirAirCraft-</a>
+</p>
 
 ---
 
 ## 📜 Lemas
 > **OCULUS EXERCITUS · FIDES ET HONOR**
-> *O Olho do Exército — Fé e Honra*
+> *O Olho Vigilante — Fidelidade e Honra*
 >
-> **MUITO ALTO, MUITO LONGE, SEMPRE · ORDEM E PROGRESSO**
+> **MUITO ALTO, MUITO LONGE, SEMPRE**
 
 ---
 
-## 🚀 Sobre o Projeto
-O **KOM-AK-X1-ALPHA** é um projeto **conceitual e experimental** de aeronave de nova geração, desenvolvido com foco em furtividade, desempenho supersônico, sistemas de navegação avançados e excelência em engenharia aeronáutica.
+## 🎯 Sobre o Projeto
+Pesquisa e desenvolvimento aeronáutico independente, focado em engenharia avançada, sistemas adaptativos e inovação tecnológica.
 
-> ⚠️ **Este projeto é educacional e experimental.** Não inclui armamento — integração por terceiros a critério do adquirente.
-
----
-
-## 📊 Especificações Principais
-
-| Item | Valor |
-|---|---|
-| 🚀 **Velocidade Máxima** | Mach 2.8 (conceito supersônico) |
-| 🛢️ **Teto Operacional** | 24.000 m (conceito) |
-| 🧭 **Navegação** | Quântica — sem dependência de GPS (conceito) |
-| 🛠️ **Manutenção** | Modular, projetada para facilidade de acesso |
-| 🕵️ **Assinatura Radar** | Reduzida — design furtivo |
-| 📚 **Natureza** | Conceitual e Experimental |
-| 🌍 **Origem** | Brasil 🇧🇷 |
+> ⚠️ **Projeto conceitual e de pesquisa.** Não é sistema de voo operacional. Não conectar a aeronaves reais.
 
 ---
 
-## 📂 Estrutura do Repositório
+## 📐 Estrutura Técnica
+- **CAD + CAE Integrado** — Modelagem e simulação computacional
+- **Sistemas Hidráulicos** — Dupla redundância, padrão aeronáutico
+- **Monitoramento de Sinais** — Faixas oficiais e detecção de anomalias
+- **Protocolo de Segurança** — Conteúdo público + área protegida
+
+---
+
+## 🛡️ Princípios
+- **Disciplina** — Rigor em cada cálculo
+- **Honra** — Verdade nos resultados
+- **Lealdade** — Ao propósito e ao país
+- **Coragem** — Ousar inovar
+- **Excelência** — Seguro, eficiente, duradouro
+
+---
+
+## 🔒 Identificador Interno
+`LX-KOM-001-BR`
+
+---
+
+*Brasil · 2026 — Muito Alto, Muito Longe, Sempre*
 
