@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexKomendirAirCraft | KOM-AK-X1-ALPHA — Projeto Experimental</title>
+<meta name="description" content="LexKomendirAirCraft KOM-AK-X1-ALPHA — Projeto experimental e de inovação. Reavaliação, aprimoramento e conhecimento didático. Brasil.">
+<meta property="og:image" content="assets/PLATE-1-4K.png">
+<style>
+body{margin:0;font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#0f172a}
+header{background:#0a1931;color:#fff;padding:28px 20px;text-align:center}
+header h1{margin:0;letter-spacing:3px;font-size:32px}
+header p{margin:8px 0 0;color:#cbd5e1;font-size:14px}
+.aviso{background:#0B3D91;color:#fff;padding:10px;text-align:center;font-weight:bold}
+.hero{max-width:1150px;margin:36px auto;padding:18px;background:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.hero img{width:100%;height:auto;border-radius:10px;border:1px solid #e2e8f0;display:block}
+.motto{background:#0a1931;color:#fff;text-align:center;padding:62px 20px;font-family:'Times New Roman',serif;letter-spacing:5px}
+.motto h2{margin:0;font-weight:400;font-size:30px;line-height:1.35}
+footer{background:#020c1f;color:#94a3b8;text-align:center;padding:28px 16px;font-size:13px;line-height:1.6}
+a{color:#38bdf8;text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="aviso">
+⚠️ Projeto em desenvolvimento — fase conceitual. Baseado em engenharia real.
+</div>
+
+<header>
+<h1>LexKomendirAirCraft</h1>
+<p>KOM-AK-X1-ALPHA — PROJETO EXPERIMENTAL · INOVAÇÃO · CONHECIMENTO DIDÁTICO | 🇧🇷 Brasil</p>
+</header>
+
+<div class="hero">
+<img src="assets/PLATE-1-4K.png" alt="PLACA 1 — LexKomendirAirCraft KOM-AK-X1-ALPHA Documentação Técnica">
+</div>
+
+<div class="motto">
+<h2>OCULUS EXERCITUS · FIDES<br>ET HONOR</h2>
+</div>
+
+<footer>
+© 2026 LexKomendirAirCraft — Uso Livre e Gratuito · Compartilhe citando a origem<br>
+KOM-AK-X1-ALPHA — Reavaliando, Aprimorando, Avançando desde 2026<br>
+<a href="https://x.com/WeinbergerAKX1" target="_blank">@WeinbergerAKX1</a>
+</footer>
+
+</body>
+</html>
