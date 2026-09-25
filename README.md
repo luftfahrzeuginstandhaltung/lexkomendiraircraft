@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LexKomendirAirCraft | KOM-AK-X1-ALPHA — Projeto Experimental</title>
 <meta name="description" content="LexKomendirAirCraft KOM-AK-X1-ALPHA — Projeto experimental e de inovação. Reavaliação, aprimoramento e conhecimento didático. Brasil.">
-<meta property="og:image" content="assets/PLATE-1-4K.png">
+<img src="assets/PLATE-1-4K-LEVE.jpg" alt="PLACA 1 — LexKomendirAirCraft KOM-AK-X1-ALPHA Documentação Técnica" loading="lazy">
 <style>
 body{margin:0;font-family:Inter,Arial,sans-serif;background:#f8fafc;color:#0f172a}
 header{background:#0a1931;color:#fff;padding:28px 20px;text-align:center}
