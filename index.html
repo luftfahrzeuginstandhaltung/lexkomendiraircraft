@@ -1,41 +1,230 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lex Komendir AirCraft — AK-Arany Sas Alpha</title>
-<style>
-:root{--green:#0f261e;--gold:#c6a951;--bg:#0a1a14;--text:#e6e8d9}
-body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-header{background:var(--green);border-bottom:3px solid var(--gold);padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
-.logo{color:var(--gold);font-weight:900;letter-spacing:2px;font-size:14px}
-select.lang{background:var(--gold);color:var(--green);border:none;padding:8px 12px;font-weight:bold;cursor:pointer;border-radius:4px}
-.hero img{width:100%;display:block;filter:contrast(1.05)}
-.content{padding:36px 20px;max-width:900px;margin:auto}
-h1{color:var(--gold);letter-spacing:3px;margin-bottom:5px}
-h2{color:var(--gold);margin-top:32px;border-left:4px solid var(--gold);padding-left:12px}
-.tag{opacity:.7;font-style:italic;margin-bottom:24px}
-.hidden{display:none}
-footer{text-align:center;padding:30px;opacity:.6;font-size:13px;border-top:1px solid #1e3a2f;margin-top:40px}
-ul{padding-left:20px}
-</style>
-</head>
-<body>
-<header>
-<div class="logo">LEX KOMENDIR AIRCRAFT</div>
-<select class="lang" id="langSelect" onchange="setLang(this.value)">
-<option value="pt">🇧🇷 Português</option>
-<option value="en">🇺🇸 English</option>
-<option value="es">🇪🇸 Español</option>
-<option value="de">🇩🇪 Deutsch</option>
-<option value="fr">🇫🇷 Français</option>
-<option value="hu">🇭🇺 Magyar</option>
-</select>
-</header>
-<div class="hero">
-<img src="capa_pista_lexkomendir.webp.png" alt="AK-Arany Sas Alpha">
-</div>
-<div class="content">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LexKomendirAirCraft | AK-ARANY SAS ALPHA</title>
+    <meta name="description" content="Projeto experimental aeronáutico — Reavaliação, engenharia e inovação">
+    <style>
+        :root {
+            --azul: #0B3D91;
+            --ouro: #C8A951;
+            --fundo: #F8FAFC;
+            --texto: #1E293B;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif;}
+        body {background: var(--fundo); color: var(--texto); line-height: 1.6;}
+        .container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
 
-<div class="lang-block" data-lang="pt">
-<h1>AK-ARANY SAS ALPHA</h1>
+        /* Seletor de Idiomas */
+        .idioma {text-align: right; padding: 15px 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
+        .btn-idioma {padding: 8px 14px; margin-left: 6px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; font-size: 0.9rem;}
+        .btn-idioma.ativo {background: var(--ouro); color: #0f261e; box-shadow: 0 2px 6px rgba(200,169,81,0.3);}
+        .btn-idioma.inativo {background: #e5e7eb; color: #4b5563;}
+        .btn-idioma:hover:not(.ativo) {background: #d1d5db;}
+
+        /* Cabeçalho */
+        header {background: linear-gradient(135deg, var(--azul), #0a2a5e); color: white; padding: 40px 20px; text-align: center;}
+        header h1 {font-size: 2rem; margin-bottom: 10px; letter-spacing: 2px;}
+        .subtitulo {font-size: 1.1rem; opacity: 0.9; margin-bottom: 5px;}
+
+        /* Capa */
+        .capa-principal {padding: 20px 0 40px; text-align: center;}
+        .capa-principal img {width: 100%; max-width: 900px; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);}
+
+        /* Botões — TODOS JUNTOS AQUI */
+        .grupo-botoes {text-align: center; margin: 10px 0 30px;}
+        .botao {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--ouro), #dbb85c);
+            color: #0f261e;
+            font-size: 1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(200,169,81,0.25);
+            transition: transform 0.3s ease;
+            margin: 6px;
+        }
+        .botao:hover {transform: scale(1.05);}
+
+        /* Seções */
+        section {padding: 50px 0; border-bottom: 1px solid #e5e7eb;}
+        .secao-conteudo {display: flex; align-items: center; gap: 40px; flex-wrap: wrap;}
+        .secao-texto {flex: 1; min-width: 300px;}
+        .secao-imagem {flex: 1; min-width: 300px;}
+        .secao-imagem img {width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+        h2 {color: var(--azul); margin-bottom: 20px; font-size: 1.5rem;}
+        .invertido .secao-conteudo {flex-direction: row-reverse;}
+
+        /* Rodapé */
+        footer {background: var(--azul); color: white; text-align: center; padding: 30px; margin-top: 20px;}
+
+        /* Alternância de idiomas */
+        .lang-en, .lang-es, .lang-fr {display: none;}
+        body.lang-en .lang-pt {display: none;}
+        body.lang-en .lang-en {display: block;}
+        body.lang-es .lang-pt, body.lang-es .lang-en, body.lang-es .lang-fr {display: none;}
+        body.lang-es .lang-es {display: block;}
+        body.lang-fr .lang-pt, body.lang-fr .lang-en, body.lang-fr .lang-es {display: none;}
+        body.lang-fr .lang-fr {display: block;}
+    </style>
+</head>
+<body class="lang-pt">
+
+<!-- 🌐 Seletor de Idiomas -->
+<div class="idioma">
+    <button class="btn-idioma ativo" data-lang="pt">🇧🇷 PT</button>
+    <button class="btn-idioma inativo" data-lang="en">🇬🇧 EN — ICAO</button>
+    <button class="btn-idioma inativo" data-lang="es">🇪🇸 ES</button>
+    <button class="btn-idioma inativo" data-lang="fr">🇫🇷 FR — OACI</button>
+</div>
+
+<!-- Cabeçalho -->
+<header>
+    <h1>✈️ LexKomendirAirCraft</h1>
+    <p class="subtitulo lang-pt">AK‑ARANY SAS ALPHA · Projeto Experimental e de Inovação</p>
+    <p class="subtitulo lang-en">AK‑ARANY SAS ALPHA · Experimental & Innovation Project</p>
+    <p class="subtitulo lang-es">AK‑ARANY SAS ALPHA · Proyecto Experimental e Innovación</p>
+    <p class="subtitulo lang-fr">AK‑ARANY SAS ALPHA · Projet Expérimental et d'Innovation</p>
+    <p style="margin-top: 8px;">🇧🇷 Brasil · 2026</p>
+</header>
+
+<div class="container">
+
+<!-- Capa Principal -->
+<div class="capa-principal">
+    <img src="assets/secao_capa_principal.jpg" alt="Lex Komendir AirCraft — AK-Arany Sas Alpha">
+</div>
+
+<!-- 📋 TODOS OS BOTÕES JÁ AQUI -->
+<div class="grupo-botoes">
+    <a href="biblioteca.html" class="botao">
+        📚 <span class="lang-pt">Biblioteca Técnica</span>
+           <span class="lang-en">Technical Library</span>
+           <span class="lang-es">Biblioteca Técnica</span>
+           <span class="lang-fr">Bibliothèque Technique</span>
+    </a>
+    <a href="gerador.html" class="botao">
+        🎨 <span class="lang-pt">Gerador de Imagens</span>
+           <span class="lang-en">Image Generator</span>
+           <span class="lang-es">Generador de Imágenes</span>
+           <span class="lang-fr">Générateur d'Images</span>
+    </a>
+    <a href="area_protegida.html" class="botao">
+        🔐 <span class="lang-pt">Área Restrita</span>
+           <span class="lang-en">Restricted Area</span>
+           <span class="lang-es">Área Restringida</span>
+           <span class="lang-fr">Espace Protégé</span>
+    </a>
+</div>
+
+<!-- SOBRE O PROJETO -->
+<section>
+    <div class="secao-conteudo">
+        <div class="secao-texto">
+            <h2>🛡️ 
+                <span class="lang-pt">Sobre o Projeto</span>
+                <span class="lang-en">About the Project</span>
+                <span class="lang-es">Sobre el Proyecto</span>
+                <span class="lang-fr">À Propos du Projet</span>
+            </h2>
+            <p class="lang-pt">O <strong>LexKomendirAirCraft</strong> é uma iniciativa focada na reavaliação, recuperação e aprimoramento de projetos aeronáuticos descontinuados ou obsoletos, aplicando engenharia real e conhecimentos atualizados.</p>
+            <p class="lang-en"><strong>LexKomendirAirCraft</strong> is an initiative focused on reassessment, recovery, and improvement of discontinued or obsolete aeronautical projects, applying real engineering and updated knowledge.</p>
+            <p class="lang-es"><strong>LexKomendirAirCraft</strong> es una iniciativa centrada en la reevaluación, recuperación y mejora de proyectos aeronáuticos descontinuados u obsoletos, aplicando ingeniería real y conocimientos actualizados.</p>
+            <p class="lang-fr"><strong>LexKomendirAirCraft</strong> est une initiative axée sur la réévaluation, la récupération et l'amélioration de projets aéronautiques abandonnés ou obsolètes, appliquant une ingénierie réelle et des connaissances à jour.</p>
+        </div>
+        <div class="secao-imagem">
+            <img src="assets/secao_sobre.jpg" alt="Sobre o Projeto">
+        </div>
+    </div>
+</section>
+
+<!-- PROPÓSITO -->
+<section class="invertido">
+    <div class="secao-conteudo">
+        <div class="secao-texto">
+            <h2>🎯 
+                <span class="lang-pt">Nosso Propósito</span>
+                <span class="lang-en">Our Purpose</span>
+                <span class="lang-es">Nuestro Propósito</span>
+                <span class="lang-fr">Notre Objectif</span>
+            </h2>
+            <p class="lang-pt">Resgatar tecnologia, gerar conhecimento didático e buscar parcerias para transformar projetos arquivados em soluções viáveis — com transparência, segurança e inovação.</p>
+            <p class="lang-en">To rescue technology, generate educational knowledge, and seek partnerships to transform archived projects into viable solutions — with transparency, safety, and innovation.</p>
+            <p class="lang-es">Rescatar tecnología, generar conocimiento educativo y buscar alianzas para transformar proyectos archivados en soluciones viables — con transparencia, seguridad e innovación.</p>
+            <p class="lang-fr">Sauver la technologie, générer des connaissances éducatives et chercher des partenariats pour transformer des projets archivés en solutions viables — avec transparence, sécurité et innovation.</p>
+        </div>
+        <div class="secao-imagem">
+            <img src="assets/secao_proposito.jpg" alt="Propósito">
+        </div>
+    </div>
+</section>
+
+<!-- TECNOLOGIA -->
+<section>
+    <div class="secao-conteudo">
+        <div class="secao-texto">
+            <h2>🔧 
+                <span class="lang-pt">Tecnologia & Engenharia</span>
+                <span class="lang-en">Technology & Engineering</span>
+                <span class="lang-es">Tecnología e Ingeniería</span>
+                <span class="lang-fr">Technologie et Ingénierie</span>
+            </h2>
+            <p class="lang-pt">Baseamos nosso trabalho em normas e práticas reconhecidas, reavaliando cada projeto com critérios técnicos atualizados — materiais, estruturas, propulsão e sistemas.</p>
+            <p class="lang-en">We base our work on recognized standards and practices, reassessing each project with updated technical criteria — materials, structures, propulsion, and systems.</p>
+            <p class="lang-es">Basamos nuestro trabajo en normas y prácticas reconocidas, reevaluando cada proyecto con criterios técnicos actualizados — materiales, estructuras, propulsión y sistemas.</p>
+            <p class="lang-fr">Nous fondons notre travail sur des normes et pratiques reconnues, en réévaluant chaque projet selon des critères techniques à jour — matériaux, structures, propulsion et systèmes.</p>
+        </div>
+        <div class="secao-imagem">
+            <img src="assets/secao_tecnologia.jpg" alt="Tecnologia">
+        </div>
+    </div>
+</section>
+
+<!-- PARCERIAS -->
+<section class="invertido">
+    <div class="secao-conteudo">
+        <div class="secao-texto">
+            <h2>🤝 
+                <span class="lang-pt">Parcerias & Investidores</span>
+                <span class="lang-en">Partnerships & Investors</span>
+                <span class="lang-es">Alianzas e Inversores</span>
+                <span class="lang-fr">Partenariats et Investisseurs</span>
+            </h2>
+            <p class="lang-pt">Estamos abertos a colaborações. Seja com instituições, empresas ou investidores — juntos podemos devolver voo a projetos que merecem renascer.</p>
+            <p class="lang-en">We are open to collaboration. Whether with institutions, companies, or investors — together we can give flight back to projects that deserve to fly again.</p>
+            <p class="lang-es">Estamos abiertos a colaboraciones. Ya sea con instituciones, empresas o inversores — juntos podemos devolver el vuelo a proyectos que merecen renacer.</p>
+            <p class="lang-fr">Nous sommes ouverts à la collaboration. Que ce soit avec des institutions, des entreprises ou des investisseurs — ensemble, nous pouvons faire revivre des projets qui méritent de renaître.</p>
+        </div>
+        <div class="secao-imagem">
+            <img src="assets/secao_parcerias.jpg" alt="Parcerias">
+        </div>
+    </div>
+</section>
+
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>© 2026 LexKomendirAirCraft — Todos os direitos reservados</p>
+    <p style="margin-top: 8px; opacity: 0.8;">Conhecimento e inovação em voo</p>
+</footer>
+
+<script>
+// 🌐 Troca de idioma
+document.querySelectorAll('.btn-idioma').forEach(botao => {
+    botao.addEventListener('click', () => {
+        const lang = botao.dataset.lang;
+        document.body.className = `lang-${lang}`;
+        document.querySelectorAll('.btn-idioma').forEach(btn => {
+            btn.classList.remove('ativo'); btn.classList.add('inativo');
+        });
+        botao.classList.add('ativo'); botao.classList.remove('inativo');
+    });
+});
+</script>
+
+</body>
+</html>
