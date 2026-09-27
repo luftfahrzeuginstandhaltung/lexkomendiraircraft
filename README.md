@@ -1,36 +1,27 @@
 
-# Lex Komendir AirCraft — AK-Arany Sas Alpha
+# ✈️ LexKomendirAirCraft — AK‑ARANY SAS ALPHA
 
-> Projeto experimental e de inovação — Reavaliação, aprimoramento e conhecimento didático.
-
-**Idioma / Language:** [🇧🇷 PT](#-português) | [🇺🇸 EN](#-english) | [🇪🇸 ES](#-español) | [🇩🇪 DE](#-deutsch) | [🇫🇷 FR](#-français) | [🇭🇺 HU](#-magyar)
-
-![Capa](assets/capa_pista_lexkomendir.webp.png)
-
----
-### 🇧🇷 Português
-#### Sobre o Projeto
-O **Lex Komendir AirCraft** é uma iniciativa focada em resgatar e evoluir conceitos aeroespaciais com base em engenharia real.
-O AK-ARANY SAS ALPHA — *Arany Sas* significa **Águia Dourada** em húngaro — símbolo de vigilância, precisão e superioridade aérea.
-#### Objetivos
-- Resgatar e aperfeiçoar projetos aeronáuticos descontinuados
-- Promover conhecimento técnico e didático
-- Desenvolver soluções inovadoras com aplicação nacional
-- Buscar parcerias e investimentos
+> **Projeto Experimental e de Inovação Aeronáutica**
+> Reavaliação, resgate e aprimoramento de projetos descontinuados · Conhecimento didático · Parcerias & Investidores
+> 
+> 🇧🇷 Brasil · 2026
 
 ---
-### 🇺🇸 English
-#### About the Project
-**Lex Komendir AirCraft** is an initiative focused on rescuing and evolving aerospace concepts based on real engineering.
-AK-ARANY SAS ALPHA — *Arany Sas* means **Golden Eagle** in Hungarian — symbol of vigilance, precision and air superiority.
-#### Objectives
-- Rescue and improve discontinued aeronautical projects
-- Promote technical and didactic knowledge
-- Develop innovative solutions
-- Seek sustainable partnerships and investments
+
+## 📌 Sobre o Projeto
+
+O **LexKomendirAirCraft** é uma iniciativa focada na **reavaliação, recuperação e aprimoramento** de projetos aeronáuticos descontinuados ou obsoletos, aplicando engenharia real e conhecimentos atualizados.
+
+Buscamos transformar projetos arquivados em soluções viáveis — com transparência, segurança e inovação.
 
 ---
-### 🇪🇸 Español
-#### Sobre el Proyecto
-**Lex Komendir AirCraft** es una iniciativa experimental enfocada en rescatar y evolucionar conceptos aeroespaciales con base en ingeniería real.
-*Arany Sas*
+
+## 🌐 Acesso ao Site
+
+👉 **https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/**
+
+---
+
+## 📂 Estrutura do Repositório
+
+
