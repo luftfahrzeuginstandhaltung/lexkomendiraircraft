@@ -1,2 +1,170 @@
-ia_geradora.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Imagens — LexKomendirAirCraft</title>
+    <style>
+        :root {
+            --azul: #0B3D91;
+            --ouro: #C8A951;
+            --fundo: #F8FAFC;
+            --texto: #1E293B;
+            --erro: #dc2626;
+            --sucesso: #16a34a;
+        }
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif;}
+        body {background: var(--fundo); color: var(--texto); line-height: 1.6; min-height: 100vh; padding: 20px;}
+        
+        .voltar {display: inline-block; margin-bottom: 20px; color: var(--azul); text-decoration: none; font-weight: bold;}
+        .voltar:hover {text-decoration: underline;}
+        
+        .container {max-width: 800px; margin: 0 auto;}
+        .cabecalho {background: linear-gradient(135deg, var(--azul), #0a2a5e); color: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; text-align: center;}
+        .cabecalho h1 {font-size: 1.6rem; margin-bottom: 5px;}
+        
+        .card {background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 3px 12px rgba(0,0,0,0.08); border-left: 4px solid var(--ouro);}
+        .card h2 {color: var(--azul); margin-bottom: 15px; font-size: 1.2rem;}
+        
+        label {font-weight: bold; display: block; margin-bottom: 8px; color: var(--texto);}
+        input, textarea {
+            width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px;
+            font-size: 1rem; margin-bottom: 15px;
+        }
+        input:focus, textarea:focus {border-color: var(--ouro); outline: none;}
+        
+        .botao {
+            width: 100%; padding: 14px;
+            background: linear-gradient(135deg, var(--ouro), #dbb85c);
+            color: #0f261e; font-weight: bold; border: none;
+            border-radius: 8px; font-size: 1.1rem; cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .botao:hover {transform: scale(1.02);}
+        .botao:disabled {opacity: 0.6; cursor: not-allowed; transform: none;}
+        
+        .resultado {margin-top: 25px; display: none;}
+        .resultado img {width: 100%; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
+        .status {margin-top: 15px; padding: 12px; border-radius: 8px; display: none;}
+        .carregando {background: #fef3c7; color: #92400e;}
+        .erro {background: #fee2e2; color: var(--erro);}
+        .sucesso {background: #dcfce7; color: var(--sucesso);}
+        
+        .dica {background: #e0f2fe; padding: 15px; border-radius: 8px; margin-top: 15px; font-size: 0.9rem;}
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="index.html" class="voltar">← Voltar ao Projeto</a>
+
+    <div class="cabecalho">
+        <h1>🎨 Gerador de Imagens</h1>
+        <p>LexKomendirAirCraft — Crie visuais para o projeto</p>
+    </div>
+
+    <div class="card">
+        <h2>🔑 Sua Chave do Hugging Face</h2>
+        <input type="password" id="chave_api" placeholder="hf_xxxxxxxxxxxxxxxxxxxx">
+        <p style="font-size: 0.85rem; color: #666; margin-top: -10px; margin-bottom: 15px;">
+            A chave fica aqui no seu navegador — nunca é enviada para outros servidores.
+        </p>
+
+        <h2>✏️ Descreva a imagem</h2>
+        <textarea id="descricao" rows="4" placeholder="Ex: Aeronave AK-ARANY SAS ALPHA, vista lateral, fundo céu azul, detalhes dourados, estilo técnico profissional..."></textarea>
+
+        <button class="botao" id="btn_gerar" onclick="gerarImagem()">
+            🚀 Gerar Imagem
+        </button>
+
+        <div class="status carregando" id="status_carregando">
+            ⏳ Gerando... Aguarde de 20 a 40 segundos.
+        </div>
+        <div class="status erro" id="status_erro"></div>
+        <div class="status sucesso" id="status_sucesso">
+            ✅ Imagem pronta! Clique nela para salvar.
+        </div>
+
+        <div class="resultado" id="caixa_imagem">
+            <h3 style="margin: 20px 0 10px;">🖼️ Resultado:</h3>
+            <a id="link_imagem" download="lexkomendir_imagem.png">
+                <img id="imagem_gerada" alt="Imagem gerada">
+            </a>
+        </div>
+
+        <div class="dica">
+            <strong>💡 Dicas:</strong><br>
+            • Seja detalhista: cores, ângulo, iluminação, estilo<br>
+            • Exemplos: "técnico em desenho de engenharia", "fotografia realista", "ilustração com fundo transparente"<br>
+            • Salve a imagem com nome claro e envie para a pasta <code>assets/</code> no GitHub
+        </div>
+    </div>
+</div>
+
+<script>
+const API_URL = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell";
+
+async function gerarImagem() {
+    const chave = document.getElementById('chave_api').value.trim();
+    const descricao = document.getElementById('descricao').value.trim();
+    
+    if (!chave) {
+        alert("⚠️ Coloque sua chave do Hugging Face primeiro!");
+        return;
+    }
+    if (!descricao) {
+        alert("⚠️ Descreva a imagem que quer criar!");
+        return;
+    }
+
+    const btn = document.getElementById('btn_gerar');
+    const carregando = document.getElementById('status_carregando');
+    const erro = document.getElementById('status_erro');
+    const sucesso = document.getElementById('status_sucesso');
+    const caixa = document.getElementById('caixa_imagem');
+    
+    btn.disabled = true;
+    carregando.style.display = 'block';
+    erro.style.display = 'none';
+    sucesso.style.display = 'none';
+    caixa.style.display = 'none';
+
+    try {
+        const resposta = await fetch(API_URL, {
+            method: "POST",
+            headers: {
+                "Authorization": `Bearer ${chave}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                inputs: descricao,
+                parameters: {num_inference_steps: 4}
+            })
+        });
+
+        if (!resposta.ok) throw new Error(`Erro ${resposta.status}`);
+
+        const blob = await resposta.blob();
+        const url = URL.createObjectURL(blob);
+        
+        document.getElementById('imagem_gerada').src = url;
+        document.getElementById('link_imagem').href = url;
+        
+        carregando.style.display = 'none';
+        sucesso.style.display = 'block';
+        caixa.style.display = 'block';
+
+    } catch (er) {
+        carregando.style.display = 'none';
+        erro.textContent = `❌ ${er.message}. Verifique sua chave e tente de novo.`;
+        erro.style.display = 'block';
+    } finally {
+        btn.disabled = false;
+    }
+}
+</script>
+
+</body>
+</html>
+
 
