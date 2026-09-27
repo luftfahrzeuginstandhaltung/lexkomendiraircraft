@@ -5,7 +5,7 @@
 
 **Idioma / Language:** [🇧🇷 PT](#-português) | [🇺🇸 EN](#-english) | [🇪🇸 ES](#-español) | [🇩🇪 DE](#-deutsch) | [🇫🇷 FR](#-français) | [🇭🇺 HU](#-magyar)
 
-![Capa](assets/capa_pista_lexkomendir.webp)
+![Capa](assets/capa_pista_lexkomendir.webp.png)
 
 ---
 ### 🇧🇷 Português
