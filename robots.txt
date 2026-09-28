@@ -1,1 +1,7 @@
 
+User-agent: *
+Allow: /
+
+Sitemap: https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/sitemap.xml
+
+Disallow: /area_protegida.html
