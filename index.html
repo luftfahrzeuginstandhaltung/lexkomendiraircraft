@@ -3,65 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LexKomendirAirCraft | AK-ARANY SAS ALPHA</title>
-    <meta name="description" content="Projeto experimental aeronáutico — Reavaliação, engenharia e inovação">
+    <title>LexKomendirAirCraft | AK‑ARANY SAS ALPHA — Águia Dourada</title>
+    <meta name="description" content="Projeto experimental aeronáutico — Reavaliação e modernização da plataforma Berkut 360. Sorocaba — Brasil.">
+    <meta property="og:image" content="capa_pista_lexkomendir.webp.png">
+    <meta property="og:title" content="AK‑ARANY SAS ALPHA — Águia Dourada">
+    <meta property="og:description" content="Renovação tecnológica de projetos aeronáuticos">
+    <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/">
     <style>
         :root {
             --azul: #0B3D91;
             --ouro: #C8A951;
+            --ouro-escuro: #b59845;
             --fundo: #F8FAFC;
             --texto: #1E293B;
+            --claro: #FFFFFF;
+            --linha: #E5E7EB;
         }
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif;}
-        body {background: var(--fundo); color: var(--texto); line-height: 1.6;}
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif;}
+        body {background: var(--fundo); color: var(--texto); line-height: 1.65;}
         .container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
 
-        /* Seletor de Idiomas */
-        .idioma {text-align: right; padding: 15px 20px; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
-        .btn-idioma {padding: 8px 14px; margin-left: 6px; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; font-size: 0.9rem;}
-        .btn-idioma.ativo {background: var(--ouro); color: #0f261e; box-shadow: 0 2px 6px rgba(200,169,81,0.3);}
-        .btn-idioma.inativo {background: #e5e7eb; color: #4b5563;}
-        .btn-idioma:hover:not(.ativo) {background: #d1d5db;}
+        /* Idioma */
+        .idioma {text-align: right; padding: 12px 20px; background: var(--claro); box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
+        .btn-idioma {padding: 7px 12px; margin-left: 5px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.2s; font-size: 0.85rem;}
+        .btn-idioma.ativo {background: var(--ouro); color: #1a1a1a; box-shadow: 0 2px 6px rgba(200,169,81,0.25);}
+        .btn-idioma.inativo {background: #E5E7EB; color: #4B5563;}
+        .btn-idioma:hover:not(.ativo) {background: #D1D5DB;}
 
         /* Cabeçalho */
-        header {background: linear-gradient(135deg, var(--azul), #0a2a5e); color: white; padding: 40px 20px; text-align: center;}
-        header h1 {font-size: 2rem; margin-bottom: 10px; letter-spacing: 2px;}
-        .subtitulo {font-size: 1.1rem; opacity: 0.9; margin-bottom: 5px;}
+        header {background: linear-gradient(135deg, var(--azul), #082b75); color: white; padding: 45px 20px; text-align: center;}
+        header h1 {font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 8px; letter-spacing: 2px;}
+        .subtitulo {font-size: 1rem; opacity: 0.92; margin-bottom: 6px;}
+        .local {opacity: 0.75; font-size: 0.9rem; margin-top: 10px;}
 
         /* Capa */
-        .capa-principal {padding: 20px 0 40px; text-align: center;}
-        .capa-principal img {width: 100%; max-width: 900px; height: auto; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);}
+        .capa-principal {padding: 30px 0; text-align: center;}
+        .capa-principal img {width: 100%; max-width: 900px; height: auto; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.12);}
 
-        /* Botões — TODOS JUNTOS AQUI */
-        .grupo-botoes {text-align: center; margin: 10px 0 30px;}
+        /* Botões */
+        .grupo-botoes {text-align: center; margin: 0 0 40px;}
         .botao {
             display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--ouro), #dbb85c);
-            color: #0f261e;
-            font-size: 1rem;
+            padding: 0.9rem 1.8rem;
+            background: linear-gradient(135deg, var(--ouro), var(--ouro-escuro));
+            color: #1a1a1a;
+            font-size: 0.95rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(200,169,81,0.25);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s;
             margin: 6px;
         }
-        .botao:hover {transform: scale(1.05);}
+        .botao:hover {transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,81,0.35);}
 
         /* Seções */
-        section {padding: 50px 0; border-bottom: 1px solid #e5e7eb;}
-        .secao-conteudo {display: flex; align-items: center; gap: 40px; flex-wrap: wrap;}
+        section {padding: 45px 0; border-bottom: 1px solid var(--linha);}
+        .secao-conteudo {display: flex; align-items: center; gap: 35px; flex-wrap: wrap;}
         .secao-texto {flex: 1; min-width: 300px;}
         .secao-imagem {flex: 1; min-width: 300px;}
-        .secao-imagem img {width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
-        h2 {color: var(--azul); margin-bottom: 20px; font-size: 1.5rem;}
+        .secao-imagem img {width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); background: #fff;}
+        h2 {color: var(--azul); margin-bottom: 18px; font-size: 1.4rem; display: flex; align-items: center; gap: 8px;}
+        p {margin-bottom: 12px;}
         .invertido .secao-conteudo {flex-direction: row-reverse;}
 
-        /* Rodapé */
-        footer {background: var(--azul); color: white; text-align: center; padding: 30px; margin-top: 20px;}
+        /* Aviso */
+        .aviso {background: rgba(11, 61, 145, 0.05); border-left: 3px solid var(--azul); padding: 15px 20px; border-radius: 4px; margin: 30px 0; font-size: 0.9rem; color: #2c3e50;}
 
-        /* Alternância de idiomas */
+        /* Rodapé */
+        footer {background: var(--azul); color: white; text-align: center; padding: 35px 20px; margin-top: 20px;}
+        footer p {opacity: 0.9; font-size: 0.9rem;}
+
+        /* Idiomas */
         .lang-en, .lang-es, .lang-fr {display: none;}
         body.lang-en .lang-pt {display: none;}
         body.lang-en .lang-en {display: block;}
@@ -73,44 +86,44 @@
 </head>
 <body class="lang-pt">
 
-<!-- 🌐 Seletor de Idiomas -->
+<!-- 🌐 Idioma -->
 <div class="idioma">
     <button class="btn-idioma ativo" data-lang="pt">🇧🇷 PT</button>
-    <button class="btn-idioma inativo" data-lang="en">🇬🇧 EN — ICAO</button>
+    <button class="btn-idioma inativo" data-lang="en">🇬🇧 EN</button>
     <button class="btn-idioma inativo" data-lang="es">🇪🇸 ES</button>
-    <button class="btn-idioma inativo" data-lang="fr">🇫🇷 FR — OACI</button>
+    <button class="btn-idioma inativo" data-lang="fr">🇫🇷 FR</button>
 </div>
 
 <!-- Cabeçalho -->
 <header>
     <h1>✈️ LexKomendirAirCraft</h1>
-    <p class="subtitulo lang-pt">AK‑ARANY SAS ALPHA · Projeto Experimental e de Inovação</p>
-    <p class="subtitulo lang-en">AK‑ARANY SAS ALPHA · Experimental & Innovation Project</p>
-    <p class="subtitulo lang-es">AK‑ARANY SAS ALPHA · Proyecto Experimental e Innovación</p>
-    <p class="subtitulo lang-fr">AK‑ARANY SAS ALPHA · Projet Expérimental et d'Innovation</p>
-    <p style="margin-top: 8px;">🇧🇷 Brasil · 2026</p>
+    <p class="subtitulo lang-pt"><strong>AK‑ARANY SAS ALPHA</strong> · Águia Dourada — Projeto de Modernização Tecnológica</p>
+    <p class="subtitulo lang-en"><strong>AK‑ARANY SAS ALPHA</strong> · Golden Eagle — Technology Modernization Project</p>
+    <p class="subtitulo lang-es"><strong>AK‑ARANY SAS ALPHA</strong> · Águila Dorada — Proyecto de Modernización Tecnológica</p>
+    <p class="subtitulo lang-fr"><strong>AK‑ARANY SAS ALPHA</strong> · Aigle d'Or — Projet de Modernisation Technologique</p>
+    <p class="local">🇧🇷 Sorocaba — Brasil · 2026</p>
 </header>
 
 <div class="container">
 
-<!-- Capa Principal -->
+<!-- Capa -->
 <div class="capa-principal">
-    <img src="assets/secao_capa_principal.jpg" alt="Lex Komendir AirCraft — AK-Arany Sas Alpha">
+    <img src="capa_pista_lexkomendir.webp.png" alt="AK‑ARANY SAS ALPHA — Pista de Sorocaba">
 </div>
 
-<!-- 📋 TODOS OS BOTÕES JÁ AQUI -->
+<!-- Botões -->
 <div class="grupo-botoes">
-    <a href="biblioteca.html" class="botao">
+    <a href="biblioteca_codigos.html" class="botao">
         📚 <span class="lang-pt">Biblioteca Técnica</span>
            <span class="lang-en">Technical Library</span>
            <span class="lang-es">Biblioteca Técnica</span>
            <span class="lang-fr">Bibliothèque Technique</span>
     </a>
-    <a href="gerador.html" class="botao">
-        🎨 <span class="lang-pt">Gerador de Imagens</span>
-           <span class="lang-en">Image Generator</span>
-           <span class="lang-es">Generador de Imágenes</span>
-           <span class="lang-fr">Générateur d'Images</span>
+    <a href="#em-breve" class="botao">
+        🎨 <span class="lang-pt">Desenhos Técnicos</span>
+           <span class="lang-en">Technical Drawings</span>
+           <span class="lang-es">Planos Técnicos</span>
+           <span class="lang-fr">Plans Techniques</span>
     </a>
     <a href="area_protegida.html" class="botao">
         🔐 <span class="lang-pt">Área Restrita</span>
@@ -120,7 +133,7 @@
     </a>
 </div>
 
-<!-- SOBRE O PROJETO -->
+<!-- Sobre -->
 <section>
     <div class="secao-conteudo">
         <div class="secao-texto">
@@ -128,20 +141,24 @@
                 <span class="lang-pt">Sobre o Projeto</span>
                 <span class="lang-en">About the Project</span>
                 <span class="lang-es">Sobre el Proyecto</span>
-                <span class="lang-fr">À Propos du Projet</span>
+                <span class="lang-fr">À Propos</span>
             </h2>
-            <p class="lang-pt">O <strong>LexKomendirAirCraft</strong> é uma iniciativa focada na reavaliação, recuperação e aprimoramento de projetos aeronáuticos descontinuados ou obsoletos, aplicando engenharia real e conhecimentos atualizados.</p>
-            <p class="lang-en"><strong>LexKomendirAirCraft</strong> is an initiative focused on reassessment, recovery, and improvement of discontinued or obsolete aeronautical projects, applying real engineering and updated knowledge.</p>
-            <p class="lang-es"><strong>LexKomendirAirCraft</strong> es una iniciativa centrada en la reevaluación, recuperación y mejora de proyectos aeronáuticos descontinuados u obsoletos, aplicando ingeniería real y conocimientos actualizados.</p>
-            <p class="lang-fr"><strong>LexKomendirAirCraft</strong> est une initiative axée sur la réévaluation, la récupération et l'amélioration de projets aéronautiques abandonnés ou obsolètes, appliquant une ingénierie réelle et des connaissances à jour.</p>
+            <p class="lang-pt">O <strong>AK‑ARANY SAS ALPHA</strong> é um projeto de renovação tecnológica baseado na plataforma experimental <strong>Berkut 360</strong> (configuração canard, 1989). Reavaliamos, atualizamos e integramos soluções comprovadas — sem inventar tecnologias — visando eficiência, segurança e aplicabilidade real.</p>
+            <p class="lang-en"><strong>AK‑ARANY SAS ALPHA</strong> is a technology renewal project based on the experimental <strong>Berkut 360</strong> platform (canard configuration, 1989). We reassess, update, and integrate proven solutions — no invented technologies — aiming for efficiency, safety, and real‑world applicability.</p>
+            <p class="lang-es"><strong>AK‑ARANY SAS ALPHA</strong> es un proyecto de renovación tecnológica basado en la plataforma experimental <strong>Berkut 360</strong> (configuración canard, 1989). Reevaluamos, actualizamos e integramos soluciones probadas — sin tecnologías inventadas — buscando eficiencia, seguridad y aplicabilidad real.</p>
+            <p class="lang-fr"><strong>AK‑ARANY SAS ALPHA</strong> est un projet de renouvellement technologique basé sur la plateforme expérimentale <strong>Berkut 360</strong> (configuration canard, 1989). Nous réévaluons, actualisons et intégrons des solutions éprouvées — sans technologie inventée — visant efficacité, sécurité et applicabilité réelle.</p>
         </div>
-        <div class="secao-imagem">
-            <img src="assets/secao_sobre.jpg" alt="Sobre o Projeto">
+        <div class="secao-imagem" style="background: linear-gradient(135deg, #eef2ff, #fef8e7); display:flex; align-items:center; justify-content:center; padding:40px; text-align:center; border-radius:10px;">
+            <div>
+                <strong style="color:#0B3D91; font-size:1.1rem;">Plataforma Base</strong><br>
+                <span style="color:#C8A951; font-weight:bold;">BERKUT 360</span><br>
+                <small style="color:#64748b;">Burt Rutan · 1989 · Canard Pusher</small>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- PROPÓSITO -->
+<!-- Propósito -->
 <section class="invertido">
     <div class="secao-conteudo">
         <div class="secao-texto">
@@ -149,77 +166,77 @@
                 <span class="lang-pt">Nosso Propósito</span>
                 <span class="lang-en">Our Purpose</span>
                 <span class="lang-es">Nuestro Propósito</span>
-                <span class="lang-fr">Notre Objectif</span>
+                <span class="lang-fr">Notre Mission</span>
             </h2>
-            <p class="lang-pt">Resgatar tecnologia, gerar conhecimento didático e buscar parcerias para transformar projetos arquivados em soluções viáveis — com transparência, segurança e inovação.</p>
-            <p class="lang-en">To rescue technology, generate educational knowledge, and seek partnerships to transform archived projects into viable solutions — with transparency, safety, and innovation.</p>
-            <p class="lang-es">Rescatar tecnología, generar conocimiento educativo y buscar alianzas para transformar proyectos archivados en soluciones viables — con transparencia, seguridad e innovación.</p>
-            <p class="lang-fr">Sauver la technologie, générer des connaissances éducatives et chercher des partenariats pour transformer des projets archivés en solutions viables — avec transparence, sécurité et innovation.</p>
+            <p class="lang-pt">Resgatar conhecimento técnico, gerar material didático e buscar parcerias para transformar projetos descontinuados em alternativas viáveis. Foco: observação ambiental, rural e infraestrutura.</p>
+            <p class="lang-en">To recover technical knowledge, produce educational resources, and seek partnerships to transform discontinued projects into viable alternatives. Focus: environmental, rural, and infrastructure monitoring.</p>
+            <p class="lang-es">Rescatar conocimiento técnico, generar material educativo y buscar alianzas para transformar proyectos discontinuados en alternativas viables. Enfoque: observación ambiental, rural y de infraestructura.</p>
+            <p class="lang-fr">Récupérer des connaissances techniques, produire des ressources éducatives et chercher des partenariats pour transformer des projets abandonnés en alternatives viables. Focus: surveillance environnementale, rurale et d'infrastructure.</p>
         </div>
-        <div class="secao-imagem">
-            <img src="assets/secao_proposito.jpg" alt="Propósito">
+        <div class="secao-imagem" style="background: linear-gradient(135deg, #e6fffa, #fef8e7); display:flex; align-items:center; justify-content:center; padding:40px; text-align:center; border-radius:10px;">
+            <div>
+                <strong style="color:#0B3D91;">Missão Principal</strong><br>
+                <span style="color:#C8A951; font-weight:bold;">OBSERVAÇÃO & MONITORAMENTO</span><br>
+                <small style="color:#64748b;">Autonomia · Baixo custo · Nacional</small>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TECNOLOGIA -->
+<!-- Próximos Passos -->
 <section>
     <div class="secao-conteudo">
         <div class="secao-texto">
-            <h2>🔧 
-                <span class="lang-pt">Tecnologia & Engenharia</span>
-                <span class="lang-en">Technology & Engineering</span>
-                <span class="lang-es">Tecnología e Ingeniería</span>
-                <span class="lang-fr">Technologie et Ingénierie</span>
+            <h2>🔭 
+                <span class="lang-pt">Próximos Passos</span>
+                <span class="lang-en">Next Steps</span>
+                <span class="lang-es">Próximos Pasos</span>
+                <span class="lang-fr">Prochaines Étapes</span>
             </h2>
-            <p class="lang-pt">Baseamos nosso trabalho em normas e práticas reconhecidas, reavaliando cada projeto com critérios técnicos atualizados — materiais, estruturas, propulsão e sistemas.</p>
-            <p class="lang-en">We base our work on recognized standards and practices, reassessing each project with updated technical criteria — materials, structures, propulsion, and systems.</p>
-            <p class="lang-es">Basamos nuestro trabajo en normas y prácticas reconocidas, reevaluando cada proyecto con criterios técnicos actualizados — materiales, estructuras, propulsión y sistemas.</p>
-            <p class="lang-fr">Nous fondons notre travail sur des normes et pratiques reconnues, en réévaluant chaque projet selon des critères techniques à jour — matériaux, structures, propulsion et systèmes.</p>
+            <p class="lang-pt">Modelagem 3D → Simulação aerodinâmica → Definição de materiais → Projeto detalhado → Caminho para CAVE (Certificado de Autorização de Voo Experimental).</p>
+            <p class="lang-en">3D Modeling → Aerodynamic Simulation → Material Definition → Detailed Design → Path to Experimental Flight Authorization.</p>
+            <p class="lang-es">Modelado 3D → Simulación aerodinámica → Definición de materiales → Proyecto detallado → Camino hacia Vuelo Experimental.</p>
+            <p class="lang-fr">Modélisation 3D → Simulation aérodynamique → Définition des matériaux → Conception détaillée → Vers Autorisation de Vol Expérimental.</p>
         </div>
-        <div class="secao-imagem">
-            <img src="assets/secao_tecnologia.jpg" alt="Tecnologia">
+        <div class="secao-imagem" style="background: linear-gradient(135deg, #f0f4ff, #fff7e8); display:flex; align-items:center; justify-content:center; padding:40px; text-align:center; border-radius:10px;">
+            <div>
+                <strong style="color:#0B3D91;">Status Atual</strong><br>
+                <span style="color:#C8A951; font-weight:bold;">ESTUDO CONCEITUAL</span><br>
+                <small style="color:#64748b;">Fase Preliminar · 28/09/2026</small>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- PARCERIAS -->
-<section class="invertido">
-    <div class="secao-conteudo">
-        <div class="secao-texto">
-            <h2>🤝 
-                <span class="lang-pt">Parcerias & Investidores</span>
-                <span class="lang-en">Partnerships & Investors</span>
-                <span class="lang-es">Alianzas e Inversores</span>
-                <span class="lang-fr">Partenariats et Investisseurs</span>
-            </h2>
-            <p class="lang-pt">Estamos abertos a colaborações. Seja com instituições, empresas ou investidores — juntos podemos devolver voo a projetos que merecem renascer.</p>
-            <p class="lang-en">We are open to collaboration. Whether with institutions, companies, or investors — together we can give flight back to projects that deserve to fly again.</p>
-            <p class="lang-es">Estamos abiertos a colaboraciones. Ya sea con instituciones, empresas o inversores — juntos podemos devolver el vuelo a proyectos que merecen renacer.</p>
-            <p class="lang-fr">Nous sommes ouverts à la collaboration. Que ce soit avec des institutions, des entreprises ou des investisseurs — ensemble, nous pouvons faire revivre des projets qui méritent de renaître.</p>
-        </div>
-        <div class="secao-imagem">
-            <img src="assets/secao_parcerias.jpg" alt="Parcerias">
-        </div>
-    </div>
-</section>
+<!-- Aviso -->
+<div class="aviso">
+    ⚠️ <strong class="lang-pt">Estado do Projeto:</strong>
+    <span class="lang-pt">Estudo conceitual em fase preliminar. Não é produto certificado, aprovado ou em operação. Dados baseados em referências públicas e aplicados com critério de engenharia.</span>
+    <span class="lang-en">Project in conceptual phase. Not a certified, approved, or operating product. Data based on public references and applied with engineering judgment.</span>
+    <span class="lang-es">Proyecto en fase conceptual. No es producto certificado ni en operación. Datos basados en referencias públicas.</span>
+    <span class="lang-fr">Projet en phase conceptuelle. Pas un produit certifié ou en service. Données basées sur des références publiques.</span>
+</div>
 
 </div>
 
 <!-- Rodapé -->
 <footer>
-    <p>© 2026 LexKomendirAirCraft — Todos os direitos reservados</p>
-    <p style="margin-top: 8px; opacity: 0.8;">Conhecimento e inovação em voo</p>
+    <p>© 2026 LexKomendirAirCraft™ — AK‑ARANY SAS ALPHA</p>
+    <p style="margin-top: 8px; opacity: 0.75;">
+        <span class="lang-pt">Conhecimento e inovação em voo</span>
+        <span class="lang-en">Knowledge and innovation in flight</span>
+        <span class="lang-es">Conocimiento e innovación en vuelo</span>
+        <span class="lang-fr">Connaissance et innovation en vol</span>
+    </p>
 </footer>
 
 <script>
-// 🌐 Troca de idioma
 document.querySelectorAll('.btn-idioma').forEach(botao => {
     botao.addEventListener('click', () => {
         const lang = botao.dataset.lang;
         document.body.className = `lang-${lang}`;
-        document.querySelectorAll('.btn-idioma').forEach(btn => {
-            btn.classList.remove('ativo'); btn.classList.add('inativo');
+        document.querySelectorAll('.btn-idioma').forEach(b => {
+            b.classList.remove('ativo'); b.classList.add('inativo');
         });
         botao.classList.add('ativo'); botao.classList.remove('inativo');
     });
