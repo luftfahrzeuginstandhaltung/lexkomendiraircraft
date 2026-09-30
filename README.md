@@ -1,5 +1,7 @@
 # AK‑ARANY SAS ALPHA — Projeto de Modernização Aeronáutica
 
+<img src="capa_pista_lexkomendir.webp.png" alt="AK-ARANY SAS ALPHA — Pista">
+
 > Plataforma Berkut 360 — Reavaliação, engenharia e inovação experimental aeronáutica no Brasil.
 
 ## 📌 Sobre o Projeto
