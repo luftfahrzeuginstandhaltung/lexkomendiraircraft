@@ -1,92 +1,172 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AK-ARANY SAS | Biblioteca Técnica - LexKomendirCompanyAirCraft</title>
-  <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/biblioteca.html">
-  <meta name="description" content="Biblioteca Técnica AK-ARANY SAS - Acervo RBAC 21, UL350iS 130HP, compósitos Berkut 360 - LexKomendirCompanyAirCraft - Fase conceitual 2026">
-  <meta property="og:title" content="AK-ARANY SAS | Biblioteca Técnica">
-  <meta property="og:description" content="Acervo para estudo de engenharia - RBAC 21, UL350iS, Berkut 360">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    :root {
-      --fundo: #020a18;
-      --ouro: #d4af37;
-      --ouro-claro: #f0d78c;
-      --texto: #e5e7eb;
-      --texto-claro: #94a3b8;
-      --barra: #0f1e3a;
-      --aba-ativa: #1e3a5f;
-      --borda: #1e3a5f;
-      --aviso-amarelo: rgba(234, 179, 8, 0.08);
-      --etiqueta-verde: rgba(34, 197, 94, 0.15);
-      --etiqueta-vermelho: rgba(239, 68, 68, 0.15);
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      background: var(--fundo); 
-      color: var(--texto); 
-      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
-      line-height: 1.6; 
-      display: flex; 
-      flex-direction: column; 
-      min-height: 100vh; 
-    }
-    a { color: var(--ouro); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--ouro-claro); }
-    
-    header { background: var(--barra); border-bottom: 1px solid var(--borda); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
-    .logo { font-weight: 900; font-size: 1.25rem; letter-spacing: .05em; color: var(--ouro); display: flex; align-items: center; gap: .5rem; }
-    nav ul { display: flex; list-style: none; gap: 1.5rem; }
-    nav a { font-size: .9rem; font-weight: 500; color: var(--texto-claro); }
-    nav a:hover, nav a.active { color: var(--ouro); }
-    
-    main { flex: 1; max-width: 1200px; width: 100%; margin: 2rem auto; padding: 0 1.5rem; }
-    
-    .notice-banner { background: var(--aviso-amarelo); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; }
-    .notice-banner strong { color: var(--ouro-claro); }
-    
-    .search-section { background: rgba(15, 30, 58, 0.5); border: 1px solid var(--borda); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
-    .search-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
-    .search-box input { flex: 1; background: var(--fundo); border: 1px solid var(--borda); color: var(--texto); padding: .75rem 1rem; border-radius: 6px; font-family: inherit; font-size: 1rem; }
-    .search-box input:focus { outline: none; border-color: var(--ouro); }
-    .search-box button { background: var(--ouro); color: var(--fundo); border: none; padding: .75rem 1.5rem; border-radius: 6px; font-weight: 700; cursor: pointer; }
-    .search-box button:hover { background: var(--ouro-claro); }
-    
-    .filter-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .tag { background: var(--barra); border: 1px solid var(--borda); color: var(--texto-claro); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem; cursor: pointer; transition: all .2s; }
-    .tag:hover, .tag.active { background: var(--aba-ativa); color: var(--ouro); border-color: var(--ouro); }
-    
-    .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
-    .doc-card { background: var(--barra); border: 1px solid var(--borda); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform .2s, border-color .2s; }
-    .doc-card:hover { transform: translateY(-2px); border-color: var(--ouro); }
-    
-    .doc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .75rem; }
-    .doc-code { 
-      font-family: 'JetBrains Mono', 'Consolas', monospace; 
-      font-size: .75rem; 
-      color: var(--ouro); 
-      background: rgba(212, 175, 55, 0.1); 
-      padding: .2rem .5rem; 
-      border-radius: 4px; 
-    }
-    .doc-status { font-size: .7rem; padding: .2rem .5rem; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
-    .status-active { background: var(--etiqueta-verde); color: #4ade80; }
-    .status-draft { background: var(--aviso-amarelo); color: #facc15; }
-    
-    .doc-title { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; color: var(--texto); }
-    .doc-description { font-size: .875rem; color: var(--texto-claro); margin-bottom: 1rem; flex-grow: 1; }
-    .doc-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; font-size: .8rem; color: var(--texto-claro); margin-top: auto; }
-    
-    .svg-container { background: #020a18; border: 1px solid #1e3a5f; border-radius: 6px; padding: 0.5rem; margin-bottom: 0.75rem; text-align: center; }
-    .svg-label { font-size: 0.7rem; color: var(--ouro-claro); font-weight: 700; display: block; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    
-    .no-results { grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--texto-claro); display: none; }
-    footer { background: var(--barra); border-top: 1px solid var(--borda); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--texto-claro); margin-top: auto; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK‑ARANY SAS ALPHA — Projeto de Modernização Aeronáutica</title>
+    <meta name="description" content="Projeto experimental — Reavaliação, engenharia e inovação. Plataforma Berkut 360. Brasil.">
+    <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/">
+    <style>
+        :root {
+            --ouro: #C8A951;
+            --ouro-claro: #E8D48F;
+            --escuro: #0A1226;
+            --painel: #111D2D;
+            --texto: #E0E6ED;
+            --texto-suave: #8899A6;
+            --borda: rgba(200,169,81,0.25);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+        }
+
+        body { 
+            background: var(--escuro); 
+            color: var(--texto); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            line-height: 1.5;
+        }
+        
+        header { 
+            padding: 40px 20px 30px; 
+            text-align: center; 
+            border-bottom: 1px solid var(--borda); 
+        }
+
+        .logo { 
+            font-size: 2rem; 
+            font-weight: 900; 
+            color: var(--ouro); 
+            margin-bottom: 8px; 
+            letter-spacing: 0.5px;
+        }
+
+        .subtitulo { 
+            color: var(--texto-suave); 
+            font-size: 1rem; 
+        }
+        
+        main { 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: 40px 20px; 
+            gap: 24px; 
+        }
+        
+        .cartao { 
+            background: var(--painel); 
+            border: 1px solid var(--borda); 
+            border-radius: 12px; 
+            padding: 30px; 
+            width: 100%; 
+            max-width: 420px; 
+            text-align: center; 
+            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .cartao:hover,
+        .cartao:focus-within { 
+            border-color: var(--ouro); 
+            transform: translateY(-4px); 
+            box-shadow: 0 10px 30px rgba(200, 169, 81, 0.1); 
+        }
+        
+        .cartao h2 { 
+            color: var(--ouro); 
+            margin-bottom: 10px; 
+            font-size: 1.25rem; 
+        }
+
+        .cartao p { 
+            color: var(--texto-suave); 
+            margin-bottom: 20px; 
+            font-size: 0.95rem; 
+            line-height: 1.6; 
+        }
+        
+        .botao { 
+            display: block; 
+            width: 100%;
+            padding: 14px 20px; 
+            background: var(--ouro); 
+            color: #000; 
+            font-weight: bold; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            transition: background-color 0.2s ease, transform 0.2s ease; 
+        }
+
+        .botao:hover,
+        .botao:focus { 
+            background: var(--ouro-claro); 
+            transform: translateY(-2px); 
+            outline: none;
+        }
+        
+        .botao-linha { 
+            display: block; 
+            width: 100%;
+            padding: 12px 20px; 
+            background: transparent; 
+            border: 1px solid var(--ouro); 
+            color: var(--ouro); 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: 600;
+            font-size: 0.95rem; 
+            transition: background-color 0.2s ease, transform 0.2s ease; 
+        }
+
+        .botao-linha:hover,
+        .botao-linha:focus { 
+            background: rgba(200, 169, 81, 0.12); 
+            transform: translateY(-2px);
+            outline: none;
+        }
+        
+        footer { 
+            text-align: center; 
+            padding: 25px 20px; 
+            border-top: 1px solid var(--borda); 
+            color: var(--texto-suave); 
+            font-size: 0.85rem; 
+        }
+    </style>
 </head>
+<body>
+
+<header>
+    <h1 class="logo">AK‑ARANY SAS ALPHA</h1>
+    <p class="subtitulo">Projeto de Modernização Aeronáutica — Plataforma Berkut 360</p>
+</header>
+
+<main>
+    <section class="cartao">
+        <h2>📚 Biblioteca Técnica</h2>
+        <p>Desenhos, especificações e documentação do projeto.</p>
+        <a href="biblioteca.html" class="botao">Acessar Biblioteca</a>
+    </section>
+
+    <section class="cartao">
+        <h2>🔐 Área Técnica Restrita</h2>
+        <p>Informações regulatórias, viabilidade e enquadramento.</p>
+        <a href="area_protegida.html" class="botao-linha">Acessar Área Restrita</a>
+    </section>
+</main>
+
+<footer>
+    © 2026 LexKomendir Company AirCraft — AK‑ARANY SAS ALPHA<br>
+    Brasil
+</footer>
+
+</body>
+</html>
