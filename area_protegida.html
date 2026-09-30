@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK‑ARANY SAS — Área Técnica Restrita</title>
+    <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/area_protegida.html">
+    <style>
+        :root {
+            --ouro: #C8A951;
+            --escuro: #0A1226;
+            --painel: #111D2D;
+            --texto: #E0E6ED;
+            --texto-suave: #8899A6;
+            --borda: rgba(200,169,81,0.25);
+            --erro: #FF6B6B;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: var(--escuro); color: var(--texto); min-height: 100vh; }
+        
+        /* Tela de Login */
+        .tela-login { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; }
+        .caixa-login { background: var(--painel); padding: 40px 30px; border-radius: 12px; border: 1px solid var(--borda); box-shadow: 0 0 30px rgba(200,169,81,0.12); width: 100%; max-width: 420px; }
+        .caixa-login h2 { color: var(--ouro); text-align: center; margin-bottom: 8px; font-size: 1.4rem; }
+        .caixa-login > p { text-align: center; color: var(--texto-suave); margin-bottom: 25px; font-size: 0.95rem; }
+        .campo { width: 100%; padding: 14px; background: rgba(255,255,255,0.06); border: 1px solid var(--borda); border-radius: 8px; color: white; font-size: 1rem; margin-bottom: 15px; outline: none; }
+        .campo:focus { border-color: var(--ouro); box-shadow: 0 0 0 2px rgba(200,169,81,0.2); }
+        .botao { width: 100%; padding: 14px; background: var(--ouro); color: #000; font-weight: bold; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: all 0.2s; }
+        .botao:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(200,169,81,0.3); }
+        .aviso-erro { color: var(--erro); margin-top: 12px; text-align: center; display: none; font-size: 0.9rem; }
+        .voltar { display: block; text-align: center; margin-top: 20px; color: var(--texto-suave); text-decoration: none; font-size: 0.9rem; }
+        .voltar:hover { color: var(--ouro); }
+
+        /* Conteúdo Protegido */
+        .conteudo { display: none; max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .conteudo h1 { color: var(--ouro); margin-bottom: 25px; font-size: 1.6rem; }
+        .conteudo h2 { color: var(--ouro); margin: 30px 0 12px; font-size: 1.2rem; }
+        .conteudo p { margin-bottom: 12px; color: #CBD5E1; line-height: 1.8; }
+        .bloco { background: rgba(200,169,81,0.06); padding: 22px; border-radius: 8px; border-left: 3px solid var(--ouro); margin: 18px 0; }
+        .sair { display: inline-block; margin-top: 25px; padding: 10px 20px; background: transparent; border: 1px solid var(--ouro); color: var(--ouro); border-radius: 6px; text-decoration: none; cursor: pointer; transition: 0.2s; }
+        .sair:hover { background: rgba(200,169,81,0.1); }
+        .navegacao { margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid var(--borda); }
+        .navegacao a { color: var(--texto-suave); text-decoration: none; margin-right: 20px; }
+        .navegacao a:hover { color: var(--ouro); }
+    </style>
+</head>
+<body>
+
+<!-- Tela de Acesso -->
+<div class="tela-login" id="telaLogin">
+    <div class="caixa-login">
+        <h2>🔐 Área Técnica Restrita</h2>
+        <p>Informações regulatórias e de viabilidade do projeto</p>
+        <input type="password" id="campoSenha" class="campo" placeholder="Digite a chave de acesso…">
+        <button class="botao" onclick="verificarSenha()">Acessar</button>
+        <div class="aviso-erro" id="avisoErro">Chave inválida — verifique com o responsável pelo projeto</div>
+        <a href="index.html" class="voltar">← Voltar para página principal</a>
+    </div>
+</div>
+
+<!-- Conteúdo Protegido -->
+<div class="conteudo" id="conteudoProtegido">
+    <nav class="navegacao">
+        <a href="index.html">← Início</a>
+        <a href="biblioteca.html">📚 Biblioteca Técnica</a>
+    </nav>
+
+    <h1>📋 AK‑ARANY SAS ALPHA — Memória Técnica & Enquadramento</h1>
+    
+    <h2>📌 Sobre o Projeto</h2>
+    <p>Projeto de modernização tecnológica baseado na plataforma Berkut 360 — reavaliação, aprimoramento e adaptação para missões de observação ambiental e patrulha.</p>
+
+    <h2>⚖️ Enquadramento Regulatório — ANAC</h2>
+    <div class="bloco">
+        <p>O projeto segue o enquadramento previsto na <strong>RBAC 21 Subparte I</strong> — Aeronaves de Construção Amadora.</p>
+        <p>A solicitação do <strong>CAVE — Certificado de Autorização de Voo Experimental</strong> será apresentada após conclusão dos projetos executivos, sob responsabilidade de profissional habilitado com CREA ativo.</p>
+        <p><em>Nada aqui constitui aprovação ou certificação concedida — representa o roteiro a ser seguido.</em></p>
+    </div>
+
+    <h2>💰 Linhas de Fomento — BNDES</h2>
+    <div class="bloco">
+        <p>O modelo de negócio está estruturado para enquadramento nas linhas de fomento à <strong>inovação e engenharia nacional</strong>.</p>
+        <p>A formalização do pedido ocorrerá na fase de validação técnica, acompanhada de plano de negócios completo, documentação de viabilidade e projetos assinados por profissional habilitado.</p>
+    </div>
+
+    <h2>🛠️ Plataforma Base — Berkut 360</h2>
+    <div class="bloco">
+        <p><strong>Configuração:</strong> Canard, monoplano, dois lugares</p>
+        <p><strong>Peso máximo de decolagem:</strong> 907 kg (2.000 lbs)</p>
+        <p><strong>Velocidade máxima:</strong> ~350 km/h</p>
+        <p><strong>Alcance:</strong> ~1.600 km</p>
+        <p><strong>Melhorias em desenvolvimento:</strong> aviônicos modernos, sistema de propulsão otimizado, trem de pouso com rodas de alto desempenho, carenagens aerodinâmicas revisadas.</p>
+    </div>
+
+    <button class="sair" onclick="sair()">Sair da área restrita</button>
+</div>
+
+<script>
+// 🔐 SENHA — Aqui você coloca a sua!
+// Para gerar: abra o Console do navegador (F12 → Console) e digite: btoa("suaSenhaAqui")
+const HASH_ESPERADO = "QXJhbnlzYXM="; // ← Padrão: AranySas — você pode alterar!
+
+function verificarSenha() {
+    const digitada = document.getElementById('campoSenha').value;
+    const codificada = btoa(digitada);
+    
+    if (codificada === HASH_ESPERADO) {
+        document.getElementById('telaLogin').style.display = 'none';
+        document.getElementById('conteudoProtegido').style.display = 'block';
+        localStorage.setItem('acessoAutorizado', 'sim');
+    } else {
+        document.getElementById('avisoErro').style.display = 'block';
+    }
+}
+
+function sair() {
+    localStorage.removeItem('acessoAutorizado');
+    window.location.reload();
+}
+
+// Permitir tecla Enter
+document.getElementById('campoSenha').addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') verificarSenha();
+});
+</script>
+
+</body>
+</html>
