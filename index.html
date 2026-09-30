@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK‑ARANY SAS ALPHA — Projeto de Modernização Aeronáutica</title>
-    <meta name="description" content="Projeto experimental — Reavaliação, engenharia e inovação. Plataforma Berkut 360. Brasil.">
+    <title>AK‑ARANY SAS ALPHA — LexKomendirAirCraft</title>
+    <meta name="description" content="Projeto de modernização tecnológica aeronáutica — Baseado na plataforma Berkut 360 — Observação Ambiental e Patrulha — Brasil 2026">
     <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/">
+    
+    <!-- Open Graph / Meta tags para redes sociais -->
+    <meta property="og:title" content="AK‑ARANY SAS ALPHA — LexKomendirAirCraft">
+    <meta property="og:description" content="Projeto de modernização tecnológica aeronáutica — Baseado no Berkut 360">
+    <meta property="og:image" content="capa_pista_lexkomendir.webp.png">
+    <meta property="og:type" content="website">
+
     <style>
         :root {
             --ouro: #C8A951;
@@ -13,159 +20,81 @@
             --escuro: #0A1226;
             --painel: #111D2D;
             --texto: #E0E6ED;
-            --texto-suave: #8899A6;
             --borda: rgba(200,169,81,0.25);
         }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-        }
-
-        body { 
-            background: var(--escuro); 
-            color: var(--texto); 
-            min-height: 100vh; 
-            display: flex; 
-            flex-direction: column; 
-            line-height: 1.5;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background: var(--escuro); color: var(--texto); min-height: 100vh; line-height: 1.6; }
         
-        header { 
-            padding: 40px 20px 30px; 
-            text-align: center; 
-            border-bottom: 1px solid var(--borda); 
-        }
-
-        .logo { 
-            font-size: 2rem; 
-            font-weight: 900; 
-            color: var(--ouro); 
-            margin-bottom: 8px; 
-            letter-spacing: 0.5px;
-        }
-
-        .subtitulo { 
-            color: var(--texto-suave); 
-            font-size: 1rem; 
-        }
+        header { padding: 40px 20px 30px; text-align: center; border-bottom: 1px solid var(--borda); }
+        .logo { color: var(--ouro); font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .subtitulo { color: #94A3B8; font-size: 1rem; max-width: 600px; margin: 0 auto; }
         
-        main { 
-            flex: 1; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center; 
-            padding: 40px 20px; 
-            gap: 24px; 
-        }
+        .capa-container { max-width: 900px; margin: 30px auto; padding: 0 20px; }
+        .capa-img { width: 100%; height: auto; border-radius: 12px; border: 2px solid var(--borda); box-shadow: 0 8px 30px rgba(0,0,0,0.5); display: block; }
+        .capa-aviso { display: none; text-align: center; padding: 40px; background: rgba(200,169,81,0.05); border-radius: 12px; border: 1px dashed var(--ouro); color: var(--ouro); }
         
-        .cartao { 
-            background: var(--painel); 
-            border: 1px solid var(--borda); 
-            border-radius: 12px; 
-            padding: 30px; 
-            width: 100%; 
-            max-width: 420px; 
-            text-align: center; 
-            transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
-        }
-
-        .cartao:hover,
-        .cartao:focus-within { 
-            border-color: var(--ouro); 
-            transform: translateY(-4px); 
-            box-shadow: 0 10px 30px rgba(200, 169, 81, 0.1); 
-        }
+        main { max-width: 900px; margin: 0 auto 60px; padding: 0 20px; display: grid; gap: 20px; }
+        .cartao { background: var(--painel); border: 1px solid var(--borda); border-radius: 12px; padding: 24px; transition: transform 0.3s ease, border-color 0.3s ease; }
+        .cartao:hover { border-color: var(--ouro); transform: translateY(-2px); }
+        .cartao h2 { color: var(--ouro); font-size: 1.25rem; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .cartao p { color: #CBD5E1; font-size: 0.95rem; margin-bottom: 15px; }
         
-        .cartao h2 { 
-            color: var(--ouro); 
-            margin-bottom: 10px; 
-            font-size: 1.25rem; 
-        }
-
-        .cartao p { 
-            color: var(--texto-suave); 
-            margin-bottom: 20px; 
-            font-size: 0.95rem; 
-            line-height: 1.6; 
-        }
+        .botao { display: inline-block; padding: 12px 24px; background: transparent; border: 1px solid var(--ouro); color: var(--ouro); border-radius: 8px; text-decoration: none; font-weight: bold; transition: background 0.25s ease, color 0.25s ease; }
+        .botao:hover { background: var(--ouro); color: #000; }
+        .botao-destaque { background: var(--ouro); color: #000; }
+        .botao-destaque:hover { background: var(--ouro-claro); border-color: var(--ouro-claro); }
         
-        .botao { 
-            display: block; 
-            width: 100%;
-            padding: 14px 20px; 
-            background: var(--ouro); 
-            color: #000; 
-            font-weight: bold; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            transition: background-color 0.2s ease, transform 0.2s ease; 
-        }
-
-        .botao:hover,
-        .botao:focus { 
-            background: var(--ouro-claro); 
-            transform: translateY(-2px); 
-            outline: none;
-        }
-        
-        .botao-linha { 
-            display: block; 
-            width: 100%;
-            padding: 12px 20px; 
-            background: transparent; 
-            border: 1px solid var(--ouro); 
-            color: var(--ouro); 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: 600;
-            font-size: 0.95rem; 
-            transition: background-color 0.2s ease, transform 0.2s ease; 
-        }
-
-        .botao-linha:hover,
-        .botao-linha:focus { 
-            background: rgba(200, 169, 81, 0.12); 
-            transform: translateY(-2px);
-            outline: none;
-        }
-        
-        footer { 
-            text-align: center; 
-            padding: 25px 20px; 
-            border-top: 1px solid var(--borda); 
-            color: var(--texto-suave); 
-            font-size: 0.85rem; 
-        }
+        footer { text-align: center; padding: 30px 20px; border-top: 1px solid var(--borda); color: #64748B; font-size: 0.85rem; margin-top: 40px; }
+        .aviso-legal { font-size: 0.75rem; color: #475569; margin-top: 10px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.4; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 class="logo">AK‑ARANY SAS ALPHA</h1>
-    <p class="subtitulo">Projeto de Modernização Aeronáutica — Plataforma Berkut 360</p>
+    <h1 class="logo">🦅 AK‑ARANY SAS ALPHA</h1>
+    <p class="subtitulo">LexKomendirAirCraft — Modernização Tecnológica Aeronáutica<br>
+    <em>Arany Sas</em> = Águia Dourada • Brasil — 2026</p>
 </header>
 
+<!-- CAPA -->
+<div class="capa-container">
+    <img 
+        src="capa_pista_lexkomendir.webp.png" 
+        alt="AK‑ARANY SAS ALPHA — Pista de Pouso" 
+        class="capa-img"
+        onerror="this.style.display='none'; document.getElementById('capa-aviso').style.display='block';"
+    >
+    <div id="capa-aviso" class="capa-aviso">
+        🖼️ <strong>Imagem da Capa</strong><br>
+        Envie o arquivo <code>capa_pista_lexkomendir.webp.png</code> para a pasta raiz do repositório para exibição.
+    </div>
+</div>
+
+<!-- SEÇÕES PRINCIPAIS -->
 <main>
     <section class="cartao">
-        <h2>📚 Biblioteca Técnica</h2>
-        <p>Desenhos, especificações e documentação do projeto.</p>
-        <a href="biblioteca.html" class="botao">Acessar Biblioteca</a>
+        <h2>📋 Sobre o Projeto</h2>
+        <p>O <strong>AK‑ARANY SAS ALPHA</strong> é um projeto de modernização e reavaliação técnica baseado na plataforma comprovada <strong>Berkut 360</strong> — aeronave de configuração canard de dois lugares em tandem.</p>
+        <p>Desenvolvido no Brasil, o projeto aplica engenharia e aviônica atualizadas para missões de <strong>observação ambiental, patrulha e desenvolvimento tecnológico</strong>.</p>
     </section>
 
     <section class="cartao">
-        <h2>🔐 Área Técnica Restrita</h2>
-        <p>Informações regulatórias, viabilidade e enquadramento.</p>
-        <a href="area_protegida.html" class="botao-linha">Acessar Área Restrita</a>
+        <h2>📐 Pranchas Técnicas</h2>
+        <p>Acesse as 8 pranchas conceituais com desenhos, dimensões, sistemas e especificações. Permite geração e download individual de imagens PNG diretamente pelo navegador.</p>
+        <a href="pranchas.html" class="botao botao-destaque">📄 Ver Pranchas Técnicas</a>
+    </section>
+
+    <section class="cartao">
+        <h2>🔊 Assistente Arany</h2>
+        <p>Apresentação interativa do projeto com síntese de voz, monitoramento de horário em tempo real e ciclo informativo contínuo.</p>
+        <a href="ia_assistente.html" class="botao">🎙️ Abrir Assistente</a>
     </section>
 </main>
 
 <footer>
-    © 2026 LexKomendir Company AirCraft — AK‑ARANY SAS ALPHA<br>
-    Brasil
+    <p><strong>LexKomendirAirCraft™ — AK‑ARANY SAS ALPHA</strong></p>
+    <p class="aviso-legal">ESTUDO CONCEITUAL PRELIMINAR — Destina-se exclusivamente a fins de pesquisa, estudo e demonstração técnica. Não substitui manuais de voo, instruções formais de manutenção ou documentos oficiais de projeto e certificação. Baseado na plataforma Berkut 360 — todos os direitos de referência preservados.</p>
+    <p class="aviso-legal" style="margin-top: 8px;">*Águia Dourada voando sempre mais alto* 🦅✨</p>
 </footer>
 
 </body>
