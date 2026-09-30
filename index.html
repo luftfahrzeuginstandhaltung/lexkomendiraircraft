@@ -1,289 +1,92 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LexKomendirAirCraft | AK‑ARANY SAS ALPHA</title>
-    <meta name="description" content="Projeto de modernização tecnológica — Berkut 360 · Brasil">
-    <meta property="og:image" content="capa_pista_lexkomendir.webp.png">
-    <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/">
-    <style>
-        :root {
-            --azul: #0B3D91;
-            --ouro: #C8A951;
-            --ouro-escuro: #b59845;
-            --fundo: #F8FAFC;
-            --texto: #1E293B;
-            --claro: #FFFFFF;
-            --linha: #E5E7EB;
-        }
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif;}
-        body {background: var(--fundo); color: var(--texto); line-height: 1.65;}
-        .container {max-width: 1200px; margin: 0 auto; padding: 0 20px;}
-
-        .idioma {text-align: right; padding: 12px 20px; background: var(--claro); box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;}
-        .btn-idioma {padding: 7px 12px; margin-left: 5px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; transition: 0.2s; font-size: 0.85rem;}
-        .btn-idioma.ativo {background: var(--ouro); color: #1a1a1a; box-shadow: 0 2px 6px rgba(200,169,81,0.25);}
-        .btn-idioma.inativo {background: #E5E7EB; color: #4B5563;}
-        .btn-idioma:hover:not(.ativo) {background: #D1D5DB;}
-
-        header {background: linear-gradient(135deg, var(--azul), #082b75); color: white; padding: 45px 20px; text-align: center;}
-        header h1 {font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 8px; letter-spacing: 2px;}
-        .subtitulo {font-size: 1rem; opacity: 0.92; margin-bottom: 6px;}
-        .local {opacity: 0.75; font-size: 0.9rem; margin-top: 10px;}
-
-        .capa-principal {padding: 30px 0; text-align: center;}
-        .capa-principal img, .planta img {width: 100%; max-width: 900px; height: auto; border-radius: 12px; box-shadow: 0 6px 25px rgba(0,0,0,0.12);}
-        .planta {padding: 20px 0 40px; text-align: center;}
-        .planta figcaption {margin-top: 12px; font-size: 0.9rem; color: #64748b;}
-
-        .grupo-botoes {text-align: center; margin: 0 0 40px;}
-        .botao {
-            display: inline-block;
-            padding: 0.9rem 1.8rem;
-            background: linear-gradient(135deg, var(--ouro), var(--ouro-escuro));
-            color: #1a1a1a;
-            font-size: 0.95rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(200,169,81,0.25);
-            transition: transform 0.3s ease, box-shadow 0.3s;
-            margin: 6px;
-        }
-        .botao:hover {transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200,169,81,0.35);}
-
-        section {padding: 45px 0; border-bottom: 1px solid var(--linha);}
-        .secao-conteudo {display: flex; align-items: center; gap: 35px; flex-wrap: wrap;}
-        .secao-texto {flex: 1; min-width: 300px;}
-        .secao-imagem {flex: 1; min-width: 300px;}
-        .secao-imagem .caixa {background: linear-gradient(135deg, #eef2ff, #fef8e7); padding: 40px; border-radius: 10px; text-align: center;}
-        h2 {color: var(--azul); margin-bottom: 18px; font-size: 1.4rem; display: flex; align-items: center; gap: 8px;}
-        p {margin-bottom: 12px;}
-        .invertido .secao-conteudo {flex-direction: row-reverse;}
-
-        .dados-tabela {width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem;}
-        .dados-tabela th, .dados-tabela td {border: 1px solid #ddd; padding: 10px 14px; text-align: left;}
-        .dados-tabela th {background: var(--azul); color: white;}
-        .dados-tabela tr:nth-child(even) {background: #f9fafb;}
-
-        .aviso {background: rgba(11, 61, 145, 0.05); border-left: 3px solid var(--azul); padding: 15px 20px; border-radius: 4px; margin: 30px 0; font-size: 0.9rem; color: #2c3e50;}
-
-        footer {background: var(--azul); color: white; text-align: center; padding: 35px 20px; margin-top: 20px;}
-        footer p {opacity: 0.9; font-size: 0.9rem;}
-
-        .lang-en, .lang-es, .lang-fr {display: none;}
-        body.lang-en .lang-pt {display: none;}
-        body.lang-en .lang-en {display: block;}
-        body.lang-es .lang-pt, body.lang-es .lang-en, body.lang-es .lang-fr {display: none;}
-        body.lang-es .lang-es {display: block;}
-        body.lang-fr .lang-pt, body.lang-fr .lang-en, body.lang-fr .lang-es {display: none;}
-        body.lang-fr .lang-fr {display: block;}
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AK-ARANY SAS | Biblioteca Técnica - LexKomendirCompanyAirCraft</title>
+  <link rel="canonical" href="https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/biblioteca.html">
+  <meta name="description" content="Biblioteca Técnica AK-ARANY SAS - Acervo RBAC 21, UL350iS 130HP, compósitos Berkut 360 - LexKomendirCompanyAirCraft - Fase conceitual 2026">
+  <meta property="og:title" content="AK-ARANY SAS | Biblioteca Técnica">
+  <meta property="og:description" content="Acervo para estudo de engenharia - RBAC 21, UL350iS, Berkut 360">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --fundo: #020a18;
+      --ouro: #d4af37;
+      --ouro-claro: #f0d78c;
+      --texto: #e5e7eb;
+      --texto-claro: #94a3b8;
+      --barra: #0f1e3a;
+      --aba-ativa: #1e3a5f;
+      --borda: #1e3a5f;
+      --aviso-amarelo: rgba(234, 179, 8, 0.08);
+      --etiqueta-verde: rgba(34, 197, 94, 0.15);
+      --etiqueta-vermelho: rgba(239, 68, 68, 0.15);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      background: var(--fundo); 
+      color: var(--texto); 
+      font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+      line-height: 1.6; 
+      display: flex; 
+      flex-direction: column; 
+      min-height: 100vh; 
+    }
+    a { color: var(--ouro); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--ouro-claro); }
+    
+    header { background: var(--barra); border-bottom: 1px solid var(--borda); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+    .logo { font-weight: 900; font-size: 1.25rem; letter-spacing: .05em; color: var(--ouro); display: flex; align-items: center; gap: .5rem; }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav a { font-size: .9rem; font-weight: 500; color: var(--texto-claro); }
+    nav a:hover, nav a.active { color: var(--ouro); }
+    
+    main { flex: 1; max-width: 1200px; width: 100%; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .notice-banner { background: var(--aviso-amarelo); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; font-size: 0.875rem; }
+    .notice-banner strong { color: var(--ouro-claro); }
+    
+    .search-section { background: rgba(15, 30, 58, 0.5); border: 1px solid var(--borda); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+    .search-box { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .search-box input { flex: 1; background: var(--fundo); border: 1px solid var(--borda); color: var(--texto); padding: .75rem 1rem; border-radius: 6px; font-family: inherit; font-size: 1rem; }
+    .search-box input:focus { outline: none; border-color: var(--ouro); }
+    .search-box button { background: var(--ouro); color: var(--fundo); border: none; padding: .75rem 1.5rem; border-radius: 6px; font-weight: 700; cursor: pointer; }
+    .search-box button:hover { background: var(--ouro-claro); }
+    
+    .filter-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .tag { background: var(--barra); border: 1px solid var(--borda); color: var(--texto-claro); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem; cursor: pointer; transition: all .2s; }
+    .tag:hover, .tag.active { background: var(--aba-ativa); color: var(--ouro); border-color: var(--ouro); }
+    
+    .doc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .doc-card { background: var(--barra); border: 1px solid var(--borda); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform .2s, border-color .2s; }
+    .doc-card:hover { transform: translateY(-2px); border-color: var(--ouro); }
+    
+    .doc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: .75rem; }
+    .doc-code { 
+      font-family: 'JetBrains Mono', 'Consolas', monospace; 
+      font-size: .75rem; 
+      color: var(--ouro); 
+      background: rgba(212, 175, 55, 0.1); 
+      padding: .2rem .5rem; 
+      border-radius: 4px; 
+    }
+    .doc-status { font-size: .7rem; padding: .2rem .5rem; border-radius: 4px; text-transform: uppercase; font-weight: 700; }
+    .status-active { background: var(--etiqueta-verde); color: #4ade80; }
+    .status-draft { background: var(--aviso-amarelo); color: #facc15; }
+    
+    .doc-title { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; color: var(--texto); }
+    .doc-description { font-size: .875rem; color: var(--texto-claro); margin-bottom: 1rem; flex-grow: 1; }
+    .doc-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1rem; font-size: .8rem; color: var(--texto-claro); margin-top: auto; }
+    
+    .svg-container { background: #020a18; border: 1px solid #1e3a5f; border-radius: 6px; padding: 0.5rem; margin-bottom: 0.75rem; text-align: center; }
+    .svg-label { font-size: 0.7rem; color: var(--ouro-claro); font-weight: 700; display: block; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    
+    .no-results { grid-column: 1 / -1; text-align: center; padding: 2rem; color: var(--texto-claro); display: none; }
+    footer { background: var(--barra); border-top: 1px solid var(--borda); padding: 2rem; text-align: center; font-size: 0.8rem; color: var(--texto-claro); margin-top: auto; }
+  </style>
 </head>
-<body class="lang-pt">
-
-<div class="idioma">
-    <button class="btn-idioma ativo" data-lang="pt">🇧🇷 PT</button>
-    <button class="btn-idioma inativo" data-lang="en">🇬🇧 EN</button>
-    <button class="btn-idioma inativo" data-lang="es">🇪🇸 ES</button>
-    <button class="btn-idioma inativo" data-lang="fr">🇫🇷 FR</button>
-</div>
-
-<header>
-    <h1>✈️ LexKomendirAirCraft</h1>
-    <p class="subtitulo"><strong>AK‑ARANY SAS ALPHA</strong> — Projeto de Modernização Tecnológica</p>
-    <p class="local">🇧🇷 Brasil · 2026</p>
-</header>
-
-<div class="container">
-
-<div class="capa-principal">
-    <img src="capa_pista_lexkomendir.webp.png" alt="AK‑ARANY SAS ALPHA">
-</div>
-
-<figure class="planta">
-    <img src="berkut360_planta_original.jpg" alt="Planta Técnica Original — Berkut 360">
-    <figcaption>📐 Planta de Referência — Berkut 360 · Desenho Nº B360‑TL‑001 · Escala 1:32</figcaption>
-</figure>
-
-<div class="grupo-botoes">
-    <a href="biblioteca_codigos.html" class="botao">
-        📚 <span class="lang-pt">Biblioteca Técnica</span>
-           <span class="lang-en">Technical Library</span>
-           <span class="lang-es">Biblioteca Técnica</span>
-           <span class="lang-fr">Bibliothèque Technique</span>
-    </a>
-    <a href="#dados" class="botao">
-        📐 <span class="lang-pt">Dados Técnicos</span>
-           <span class="lang-en">Technical Data</span>
-           <span class="lang-es">Datos Técnicos</span>
-           <span class="lang-fr">Données Techniques</span>
-    </a>
-    <a href="area_protegida.html" class="botao">
-        🔐 <span class="lang-pt">Área Restrita</span>
-           <span class="lang-en">Restricted Area</span>
-           <span class="lang-es">Área Restringida</span>
-           <span class="lang-fr">Espace Protégé</span>
-    </a>
-</div>
-
-<section id="dados">
-    <h2>📐 
-        <span class="lang-pt">Plataforma Base — Berkut 360</span>
-        <span class="lang-en">Base Platform — Berkut 360</span>
-        <span class="lang-es">Plataforma Base — Berkut 360</span>
-        <span class="lang-fr">Plateforme de Base — Berkut 360</span>
-    </h2>
-    <table class="dados-tabela">
-        <thead>
-            <tr>
-                <th><span class="lang-pt">Característica</span><span class="lang-en">Feature</span><span class="lang-es">Característica</span><span class="lang-fr">Caractéristique</span></th>
-                <th><span class="lang-pt">Valor</span><span class="lang-en">Value</span><span class="lang-es">Valor</span><span class="lang-fr">Valeur</span></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><span class="lang-pt">Configuração</span><span class="lang-en">Configuration</span></td>
-                <td>Canard · Hélice Traseira (Pusher)</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Envergadura</span><span class="lang-en">Wingspan</span></td>
-                <td>~7,54 m (24 ft 9 in)</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Comprimento</span><span class="lang-en">Length</span></td>
-                <td>~5,03 m (16 ft 6 in)</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Altura</span><span class="lang-en">Height</span></td>
-                <td>~2,44 m</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Tripulação</span><span class="lang-en">Crew</span></td>
-                <td>2 — Tandem</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Trem de Pouso</span><span class="lang-en">Landing Gear</span></td>
-                <td>Trícilo · Totalmente Retrátil</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Fuselagem</span><span class="lang-en">Fuselage</span></td>
-                <td>Fibra de Carbono / Compósitos Avançados</td>
-            </tr>
-            <tr>
-                <td><span class="lang-pt">Projeto Original</span><span class="lang-en">Original Design</span></td>
-                <td>Berkut Engineering · Burt Rutan · 1989</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
-<section>
-    <div class="secao-conteudo">
-        <div class="secao-texto">
-            <h2>🛡️ 
-                <span class="lang-pt">Sobre o Projeto</span>
-                <span class="lang-en">About the Project</span>
-                <span class="lang-es">Sobre el Proyecto</span>
-                <span class="lang-fr">À Propos</span>
-            </h2>
-            <p class="lang-pt">O <strong>AK‑ARANY SAS ALPHA</strong> é um projeto de renovação tecnológica baseado na plataforma experimental <strong>Berkut 360</strong>. Reavaliamos, atualizamos e integramos soluções comprovadas — sem tecnologias inventadas — visando eficiência, segurança e aplicabilidade real.</p>
-            <p class="lang-en"><strong>AK‑ARANY SAS ALPHA</strong> is a technology renewal project based on the experimental <strong>Berkut 360</strong> platform. We reassess, update, and integrate proven solutions — no invented technologies — aiming for efficiency, safety, and real‑world applicability.</p>
-            <p class="lang-es"><strong>AK‑ARANY SAS ALPHA</strong> es un proyecto de renovación tecnológica basado en la plataforma experimental <strong>Berkut 360</strong>. Reevaluamos, actualizamos e integramos soluciones probadas — sin tecnologías inventadas — buscando eficiencia, seguridad y aplicabilidad real.</p>
-            <p class="lang-fr"><strong>AK‑ARANY SAS ALPHA</strong> est un projet de renouvellement technologique basé sur la plateforme expérimentale <strong>Berkut 360</strong>. Nous réévaluons, actualisons et intégrons des solutions éprouvées — sans technologie inventée — visant efficacité, sécurité et applicabilité réelle.</p>
-        </div>
-        <div class="secao-imagem">
-            <div class="caixa">
-                <strong style="color:#0B3D91; font-size:1.1rem;">Plataforma Base</strong><br>
-                <span style="color:#C8A951; font-weight:bold;">BERKUT 360</span><br>
-                <small style="color:#64748b;">Burt Rutan · 1989 · Canard Pusher</small>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="invertido">
-    <div class="secao-conteudo">
-        <div class="secao-texto">
-            <h2>⚙️ 
-                <span class="lang-pt">Modernizações Planejadas</span>
-                <span class="lang-en">Planned Upgrades</span>
-                <span class="lang-es">Modernizaciones Planificadas</span>
-                <span class="lang-fr">Modernisations Prévues</span>
-            </h2>
-            <ul style="margin-left: 20px; margin-bottom: 15px;">
-                <li><strong>Propulsão:</strong> ULPower UL350iS — 130 HP, injeção eletrônica FADEC</li>
-                <li><strong>Aviônica:</strong> Garmin G3X Touch + instrumento de backup independente</li>
-                <li><strong>Freios:</strong> Sistema de alta performance Beringer Aero</li>
-                <li><strong>Pontas de Asa:</strong> Otimizadas para redução de arrasto</li>
-                <li><strong>Nariz:</strong> Adaptado para integração de sensores de observação</li>
-            </ul>
-        </div>
-        <div class="secao-imagem">
-            <div class="caixa">
-                <strong style="color:#0B3D91;">Nova Missão</strong><br>
-                <span style="color:#C8A951; font-weight:bold;">OBSERVAÇÃO & MONITORAMENTO</span><br>
-                <small style="color:#64748b;">Ambiental · Rural · Infraestrutura</small>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="secao-conteudo">
-        <div class="secao-texto">
-            <h2>🔭 
-                <span class="lang-pt">Próximos Passos</span>
-                <span class="lang-en">Next Steps</span>
-                <span class="lang-es">Próximos Pasos</span>
-                <span class="lang-fr">Prochaines Étapes</span>
-            </h2>
-            <p class="lang-pt">Modelagem 3D → Simulação aerodinâmica → Definição de materiais → Projeto detalhado → Caminho para CAVE (Certificado de Autorização de Voo Experimental).</p>
-            <p class="lang-en">3D Modeling → Aerodynamic Simulation → Material Definition → Detailed Design → Path to Experimental Flight Authorization.</p>
-        </div>
-        <div class="secao-imagem">
-            <div class="caixa">
-                <strong style="color:#0B3D91;">Status Atual</strong><br>
-                <span style="color:#C8A951; font-weight:bold;">ESTUDO CONCEITUAL</span><br>
-                <small style="color:#64748b;">Fase Preliminar · 2026</small>
-            </div>
-        </div>
-    </div>
-</section>
-
-<div class="aviso">
-    ⚠️ <strong class="lang-pt">Estado do Projeto:</strong>
-    <span class="lang-pt">Estudo conceitual em fase preliminar. Não é produto certificado ou em operação. Dados baseados em referências públicas e aplicados com critério de engenharia.</span>
-    <span class="lang-en">Project in conceptual phase. Not a certified or operating product. Data based on public references.</span>
-    <span class="lang-es">Proyecto en fase conceptual. No es producto certificado ni en operación. Datos basados en referencias públicas.</span>
-    <span class="lang-fr">Projet en phase conceptuelle. Pas un produit certifié ou en service. Données basées sur des références publiques.</span>
-</div>
-
-</div>
-
-<footer>
-    <p>© 2026 LexKomendirAirCraft™ — AK‑ARANY SAS ALPHA</p>
-    <p style="margin-top: 8px; opacity: 0.75;">
-        <span class="lang-pt">Conhecimento e inovação em voo</span>
-        <span class="lang-en">Knowledge and innovation in flight</span>
-        <span class="lang-es">Conocimiento e innovación en vuelo</span>
-        <span class="lang-fr">Connaissance et innovation en vol</span>
-    </p>
-</footer>
-
-<script>
-document.querySelectorAll('.btn-idioma').forEach(botao => {
-    botao.addEventListener('click', () => {
-        const lang = botao.dataset.lang;
-        document.body.className = `lang-${lang}`;
-        document.querySelectorAll('.btn-idioma').forEach(b => {
-            b.classList.remove('ativo'); b.classList.add('inativo');
-        });
-        botao.classList.add('ativo'); botao.classList.remove('inativo');
-    });
-});
-</script>
-
-</body>
-</html>
