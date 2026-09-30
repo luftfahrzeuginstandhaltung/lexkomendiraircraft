@@ -1,0 +1,265 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arany — Apresentação em Loop</title>
+    <style>
+        :root {
+            --ouro: #C8A951;
+            --escuro: #0A1226;
+            --painel: #111D2D;
+            --texto: #E0E6ED;
+            --borda: rgba(200,169,81,0.25);
+            --sucesso: #4ADE80;
+            --alerta: #FACC15;
+            --erro: #F87171;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+        body { background: var(--escuro); color: var(--texto); min-height: 100vh; }
+        
+        header { padding: 30px 20px; text-align: center; border-bottom: 1px solid var(--borda); }
+        .logo { color: var(--ouro); font-size: 2rem; font-weight: 900; margin-bottom: 10px; }
+        .horario { font-size: 1.4rem; color: var(--ouro); margin-top: 10px; font-weight: 600; letter-spacing: 2px; }
+        .status-loop { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 0.85rem; color: var(--sucesso); }
+        .ponto { width: 8px; height: 8px; background: var(--sucesso); border-radius: 50%; animation: piscar 1.5s infinite; }
+        @keyframes piscar { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        
+        .caixa { max-width: 800px; margin: 30px auto; padding: 30px; background: var(--painel); border: 1px solid var(--borda); border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .apresentacao { font-size: 1.3rem; text-align: center; margin-bottom: 25px; line-height: 1.8; }
+        .destaque { color: var(--ouro); font-weight: bold; }
+        .resumo { font-size: 1.05rem; line-height: 1.8; background: rgba(200,169,81,0.05); padding: 20px; border-radius: 10px; border-left: 3px solid var(--ouro); margin-bottom: 20px; }
+        
+        .botoes { display: flex; justify-content: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+        .btn { padding: 14px 24px; border-radius: 8px; border: none; font-size: 1rem; font-weight: bold; cursor: pointer; transition: transform 0.15s ease, opacity 0.2s ease, background-color 0.2s; }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn:active { transform: translateY(0); }
+        
+        .btn-ligar { background: var(--sucesso); color: #000; }
+        .btn-desligar { background: var(--erro); color: #000; }
+        .btn-pausar { background: transparent; border: 1px solid var(--ouro); color: var(--ouro); }
+        
+        .fala-atual { text-align: center; padding: 15px; background: rgba(200,169,81,0.08); border-radius: 10px; margin-top: 20px; font-size: 0.95rem; color: #ddd; min-height: 55px; display: flex; align-items: center; justify-content: center; }
+        .etapa { color: var(--ouro); font-weight: bold; margin-right: 5px; }
+        
+        .voltar { display: block; text-align: center; padding: 20px; color: #8899A6; text-decoration: none; margin-top: 10px; transition: color 0.2s; }
+        .voltar:hover { color: var(--ouro); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="logo">🦅 Arany</h1>
+    <div class="horario" id="relogio">--:--:--</div>
+    <div class="status-loop">
+        <span class="ponto" id="sinalPonto"></span>
+        <span id="statusTexto">Sistema pronto</span>
+    </div>
+</header>
+
+<div class="caixa">
+    <div class="apresentacao">
+        Seja bem-vindo ao<br>
+        <span class="destaque">AK‑ARANY SAS ALPHA</span><br>
+        Um projeto idealizado por<br>
+        <span class="destaque">LexKomendirAirCraft</span>
+    </div>
+    
+    <div class="resumo">
+        <strong>📋 Resumo do Projeto</strong><br><br>
+        O AK‑ARANY SAS ALPHA é um projeto de modernização tecnológica aeronáutica baseado na plataforma comprovada <strong>Berkut 360</strong> — uma aeronave de configuração canard, dois lugares.<br><br>
+        Desenvolvido no Brasil, o projeto reavalia, aprimora e adapta a aeronave com engenharia atualizada para missões de <strong>observação ambiental, patrulha e desenvolvimento tecnológico</strong>.<br><br>
+        O nome <em>Arany Sas</em> significa <strong>Águia Dourada</strong> em húngaro — uma homenagem que dá identidade e brilho a este voo.
+    </div>
+    
+    <div class="fala-atual" id="falaAtual">
+        <span><span class="etapa">⏳</span> Aguardando início…</span>
+    </div>
+    
+    <div class="botoes">
+        <button class="btn btn-ligar" onclick="iniciarLoop()">▶️ INICIAR APRESENTAÇÃO</button>
+        <button class="btn btn-pausar" id="btnPausar" onclick="alternarPausa()">⏸️️ Pausar</button>
+        <button class="btn btn-desligar" onclick="pararTudo()">⏹️ Parar</button>
+    </div>
+</div>
+
+<a href="index.html" class="voltar">← Voltar para página principal</a>
+
+<script>
+// 🕒 RELÓGIO
+function atualizarHorario() {
+    const agora = new Date();
+    const h = String(agora.getHours()).padStart(2, '0');
+    const m = String(agora.getMinutes()).padStart(2, '0');
+    const s = String(agora.getSeconds()).padStart(2, '0');
+    document.getElementById('relogio').textContent = `${h}:${m}:${s}`;
+}
+atualizarHorario();
+setInterval(atualizarHorario, 1000);
+
+// 🔊 GERENCIAMENTO DE VOZ
+let vocesCarregadas = [];
+
+function carregarVoces() {
+    if (typeof speechSynthesis !== 'undefined') {
+        vocesCarregadas = window.speechSynthesis.getVoices();
+    }
+}
+
+if (typeof speechSynthesis !== 'undefined') {
+    carregarVoces();
+    window.speechSynthesis.onvoiceschanged = carregarVoces;
+}
+
+function obterVozPtBR() {
+    if (vocesCarregadas.length === 0) carregarVoces();
+    return vocesCarregadas.find(v => v.lang === 'pt-BR' && v.name.includes('Google')) 
+        || vocesCarregadas.find(v => v.lang === 'pt-BR') 
+        || null;
+}
+
+// 🔁 SISTEMA DE LOOP DE APRESENTAÇÃO
+let loopAtivo = false;
+let estaPausado = false;
+
+const falas = [
+    {
+        etapa: "Apresentação",
+        texto: "Seja bem-vindo ao projeto AK-ARANY SAS ALPHA. Um projeto idealizado por LexKomendirAirCraft."
+    },
+    {
+        etapa: "Resumo",
+        texto: "O AK-ARANY SAS ALPHA é um projeto de modernização tecnológica baseado na aeronave Berkut 360 — uma plataforma canard de dois lugares."
+    },
+    {
+        etapa: "Objetivo",
+        texto: "Desenvolvido no Brasil, o projeto aplica engenharia atualizada para observação ambiental, patrulha e desenvolvimento tecnológico."
+    },
+    {
+        etapa: "Significado do nome",
+        texto: "Arany Sas significa Águia Dourada em húngaro. É uma homenagem que dá brilho e identidade ao nosso voo."
+    },
+    {
+        etapa: "Hora atual",
+        texto: () => {
+            const agora = new Date();
+            const h = agora.getHours();
+            const m = agora.getMinutes();
+            return `Agora são ${h} horas e ${m} minutos. O projeto segue em desenvolvimento ativo.`;
+        }
+    }
+];
+
+function falar(texto) {
+    window.speechSynthesis.cancel();
+    const fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = 'pt-BR';
+    
+    const voz = obterVozPtBR();
+    if (voz) fala.voice = voz;
+
+    fala.volume = 1;
+    fala.rate = 1;
+    fala.pitch = 1.05;
+    window.speechSynthesis.speak(fala);
+}
+
+function mostrarEtapa(etapa, texto) {
+    document.getElementById('falaAtual').innerHTML = 
+        `<span><span class="etapa">📌 ${etapa}:</span> ${texto}</span>`;
+}
+
+async function rodarCiclo() {
+    for (let i = 0; i < falas.length; i++) {
+        if (!loopAtivo) break;
+        
+        const f = falas[i];
+        const textoReal = typeof f.texto === 'function' ? f.texto() : f.texto;
+        
+        mostrarEtapa(f.etapa, textoReal);
+        falar(textoReal);
+        
+        // Espera a fala terminar ou o loop ser cancelado
+        await new Promise(resolve => {
+            const verificar = setInterval(() => {
+                if (!loopAtivo) {
+                    clearInterval(verificar);
+                    resolve();
+                } else if (!window.speechSynthesis.speaking && !estaPausado) {
+                    clearInterval(verificar);
+                    resolve();
+                }
+            }, 300);
+        });
+        
+        // Intervalo entre as falas
+        if (loopAtivo) {
+            let tempoPausa = 0;
+            while (tempoPausa < 2000 && loopAtivo) {
+                if (!estaPausado) {
+                    tempoPausa += 100;
+                }
+                await new Promise(res => setTimeout(res, 100));
+            }
+        }
+    }
+    
+    // Reinicia o ciclo
+    if (loopAtivo) {
+        setTimeout(rodarCiclo, 500);
+    }
+}
+
+function iniciarLoop() {
+    if (loopAtivo && !estaPausado) return;
+
+    if (estaPausado) {
+        window.speechSynthesis.resume();
+        estaPausado = false;
+        document.getElementById('btnPausar').textContent = "⏸️ Pausar";
+        document.getElementById('statusTexto').textContent = "Apresentação em andamento — ciclo ativo";
+        document.getElementById('sinalPonto').style.background = "var(--sucesso)";
+        return;
+    }
+
+    loopAtivo = true;
+    estaPausado = false;
+    document.getElementById('statusTexto').textContent = "Apresentação em andamento — ciclo ativo";
+    document.getElementById('sinalPonto').style.background = "var(--sucesso)";
+    rodarCiclo();
+}
+
+function alternarPausa() {
+    if (!loopAtivo) return;
+
+    if (!estaPausado) {
+        window.speechSynthesis.pause();
+        estaPausado = true;
+        document.getElementById('btnPausar').textContent = "▶️ Retomar";
+        document.getElementById('statusTexto').textContent = "Apresentação em pausa";
+        document.getElementById('sinalPonto').style.background = "var(--alerta)";
+        document.getElementById('falaAtual').innerHTML = `<span><span class="etapa">⏸️ Pausado</span> — clique em Retomar para continuar</span>`;
+    } else {
+        window.speechSynthesis.resume();
+        estaPausado = false;
+        document.getElementById('btnPausar').textContent = "⏸️ Pausar";
+        document.getElementById('statusTexto').textContent = "Apresentação em andamento — ciclo ativo";
+        document.getElementById('sinalPonto').style.background = "var(--sucesso)";
+    }
+}
+
+function pararTudo() {
+    loopAtivo = false;
+    estaPausado = false;
+    window.speechSynthesis.cancel();
+    document.getElementById('btnPausar').textContent = "⏸️ Pausar";
+    document.getElementById('statusTexto').textContent = "Sistema parado";
+    document.getElementById('sinalPonto').style.background = "var(--erro)";
+    document.getElementById('falaAtual').innerHTML = `<span><span class="etapa">⏹️ Parado</span> — clique em INICIAR para recomeçar</span>`;
+}
+</script>
+
+</body>
+</html>
+```
