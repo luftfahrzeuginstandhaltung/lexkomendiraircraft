@@ -1,34 +1,80 @@
 # AK‑ARANY SAS ALPHA — Projeto de Modernização Aeronáutica
 
-<img src="capa_pista_lexkomendir.webp.png" alt="AK-ARANY SAS ALPHA — Pista">
+![Status](https://img.shields.io/badge/Status-Estudo_Conceitual-blue)
+![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-green)
+![Licença](https://img.shields.io/badge/Licença-Experimental-orange)
 
-> Plataforma Berkut 360 — Reavaliação, engenharia e inovação experimental aeronáutica no Brasil.
+![Capa](capa_pista_lexkomendir.webp.png)
 
-## 📌 Sobre o Projeto
-
-O **AK‑ARANY SAS ALPHA** é uma iniciativa voltada para a modernização, reavaliação técnica e desenvolvimento de documentação de engenharia para a plataforma **Berkut 360**.
-
-Este repositório centraliza a interface principal de acesso à biblioteca técnica e aos módulos de documentação restrita do projeto.
+> Plataforma Berkut 360 — Reavaliação, engenharia e inovação experimental aeronáutica  
+> Brasil — 2026
 
 ---
 
-## 🗂️ Estrutura da Plataforma
+## 🦅 Sobre o Projeto
 
-* **📚 Biblioteca Técnica (`biblioteca.html`):** Acesso a desenhos técnicos, esquemas, especificações de projeto e documentação aberta.
-* **🔐 Área Técnica Restrita (`area_protegida.html`):** Informações regulatórias, estudos de viabilidade e enquadramento normativo.
+O **AK‑ARANY SAS ALPHA** é uma iniciativa voltada para a **modernização e reavaliação técnica** da plataforma **Berkut 360**, aeronave de configuração canard de dois lugares.
+
+- **Arany Sas** = Águia Dourada (húngaro)
+- **Foco:** Observação ambiental, patrulha e desenvolvimento tecnológico
+- Estudo conceitual — não é desenho de fabricação nem documento de certificação
+
+---
+
+## 📁 Estrutura da Plataforma
+
+| Página | Conteúdo |
+|---|---|
+| **[index.html](index.html)** | Página principal — apresentação do projeto |
+| **[pranchas.html](pranchas.html)** | 8 Pranchas Técnicas — gerar e baixar em PNG |
+| **[ia_assistente.html](ia_assistente.html)** | Assistente Arany — apresentação com voz e relógio em tempo real |
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **HTML5** (Estruturação semântica e acessível)
-* **CSS3** (Design responsivo, variáveis CSS e temas visuais otimizados)
-* **GitHub Pages** (Hospedagem da plataforma)
+- **HTML5** — Estrutura semântica e acessível
+- **CSS3** — Design responsivo, variáveis visuais otimizadas
+- **JavaScript** — Geração de imagens, narração por voz e interatividade
+- **GitHub Pages** — Hospedagem gratuita e direta
 
 ---
 
-## ⚙️ Como Executar Localmente
+## 🖼️ Preview das Pranchas Técnicas
 
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/luftfahrzeuginstandhaltung/lexkomendiraircraft.git](https://github.com/luftfahrzeuginstandhaltung/lexkomendiraircraft.git)
+A plataforma gera e exporta 8 pranchas técnicas em alta resolução (PNG) cobrindo a arquitetura e subsistemas do projeto:
+
+| Prancha | Descrição / Conteúdo |
+|---|---|
+| **Prancha 01** | Vista Geral e Geometria da Plataforma |
+| **Prancha 02** | Arranjo Geral e Cabine Tandem |
+| **Prancha 03** | Grupo Motopropulsor e Instalação |
+| **Prancha 04** | Aviônica Digital e Painel Integrado |
+| **Prancha 05** | Estrutura Canard e Superfícies de Comando |
+| **Prancha 06** | Sistema elétrico e Redundâncias |
+| **Prancha 07** | Configuração de Observação e Carga Útil |
+| **Prancha 08** | Envelope de Voo e Especificações Operacionais |
+
+---
+
+## 🚀 Como Visualizar
+
+🌐 **Acesse o site oficial do projeto:**  
+👉 [https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/](https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/)
+
+1. Acesse o link acima
+2. Navegue pelas seções
+3. Nas pranchas → clique em **"Gerar & Baixar PNG"** para salvar cada prancha
+
+---
+
+## ⚠️ Isenção de Responsabilidade (*Disclaimer*)
+
+- **Estudo conceitual preliminar** — destina-se exclusivamente a fins de pesquisa, demonstração tecnológica e desenvolvimento acadêmico/experimental.
+- Não substitui manuais de voo, instruções formais de manutenção ou documentos oficiais de projeto e certificação aeronáutica.
+- Baseado na plataforma Berkut 360 — todos os direitos de referência preservados.
+
+---
+
+**LexKomendirAirCraft™ — AK‑ARANY SAS ALPHA**  
+*Águia Dourada voando sempre mais alto* 🦅✨
