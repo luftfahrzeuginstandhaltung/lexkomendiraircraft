@@ -1,529 +1,321 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AK-ARANY SAS ALPHA · Sistema Integrado de Aviônica e Motorização</title>
+    <title>AK-ARANY SAS ALPHA · Plataforma de Patrulha</title>
+    <meta name="description" content="AK-ARANY SAS ALPHA — Projeto experimental baseado no Berkut 360. Motorização ULPower UL350iS. Telemetria e aviônica integrada. Brasil.">
+    <meta property="og:image" content="assets/capa_pista_lexkomendir.webp.png">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        navy: { 800: '#0b2545', 900: '#07172c' },
-                        gold: { 500: '#c8a951', 600: '#b09038' }
+                        brand: {
+                            gold: '#C8A951',
+                            emerald: '#10B981',
+                            dark: '#0F172A',
+                            panel: '#1E293B'
+                        }
                     }
                 }
             }
         }
     </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        html { scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { background-color: #C8A95120; border-color: #C8A951; color: #C8A951; }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen">
+<body class="bg-brand-dark text-slate-100 font-sans min-h-screen">
 
-    <!-- CABEÇALHO DA PLATAFORMA -->
-    <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <a href="index.html" class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-gold-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-900/30 hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-plane"></i>
-                </a>
-                <div>
-                    <h1 class="text-xl font-extrabold tracking-tight text-white">AK-ARANY SAS <span class="text-gold-500 font-mono text-sm px-2 py-0.5 bg-gold-500/10 rounded border border-gold-500/20">ALPHA</span></h1>
-                    <p class="text-xs text-slate-400">Plataforma de Fiscalização e Patrulha · Berkut 360</p>
-                </div>
+<!-- CABEÇALHO -->
+<header class="border-b border-slate-700 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center space-x-3">
+            <a href="#" class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-600 to-brand-gold flex items-center justify-center text-white hover:scale-105 transition-transform">
+                <i class="fa-solid fa-plane"></i>
+            </a>
+            <div>
+                <h1 class="text-xl font-bold tracking-wider text-slate-100">AK-ARANY SAS ALPHA</h1>
+                <p class="text-xs text-slate-400">Plataforma Berkut 360 · Patrulha & Telemetria</p>
             </div>
-            <nav class="flex items-center space-x-4 text-sm font-semibold">
-                <a href="index.html" class="px-3 py-1.5 rounded-lg bg-gold-500/10 text-gold-500 border border-gold-500/20 hover:bg-gold-500/20 transition flex items-center gap-2">
-                    <i class="fa-solid fa-home"></i> Início
-                </a>
-                <a href="#motorizacao" class="text-slate-300 hover:text-gold-500 transition"><i class="fa-solid fa-gear me-1"></i> Motorização</a>
-                <a href="#telemetria" class="text-slate-300 hover:text-blue-400 transition"><i class="fa-solid fa-crosshairs me-1"></i> Telemetria</a>
-                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 me-2 animate-pulse"></span> SISTEMA ONLINE
-                </span>
-            </nav>
         </div>
-    </header>
+        <div class="flex items-center gap-3 text-xs">
+            <a href="#" class="px-3 py-1.5 rounded-lg bg-brand-gold/10 text-brand-gold border border-brand-gold/20 font-semibold hover:bg-brand-gold/20 transition">
+                <i class="fa-solid fa-home"></i> Início
+            </a>
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE
+            </span>
+        </div>
+    </div>
+</header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+<!-- CAPA -->
+<section class="max-w-4xl mx-auto px-4 pt-6">
+    <img src="assets/capa_pista_lexkomendir.webp.png" alt="AK-ARANY SAS ALPHA — Plataforma de Patrulha" class="w-full rounded-2xl shadow-2xl border border-slate-700">
+</section>
 
-        <!-- IMAGEM DE CAPA -->
-        <div class="max-w-4xl mx-auto">
-            <img src="capa_pista_lexkomendir.webp.png" alt="Modelo AK-ARANY SAS ALPHA" class="w-full rounded-2xl shadow-2xl border border-slate-800">
+<!-- ABAS DE NAVEGAÇÃO -->
+<nav class="max-w-7xl mx-auto px-4 pt-8">
+    <div class="flex flex-wrap gap-2 border-b border-slate-700">
+        <button class="tab-btn active px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent" data-tab="projeto">
+            <i class="fa-solid fa-info-circle mr-1"></i> Projeto
+        </button>
+        <button class="tab-btn px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent text-slate-400 hover:text-slate-200" data-tab="tecnico">
+            <i class="fa-solid fa-gear mr-1"></i> Técnico
+        </button>
+        <button class="tab-btn px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent text-slate-400 hover:text-slate-200" data-tab="registro">
+            <i class="fa-solid fa-file-code mr-1"></i> Registro
+        </button>
+    </div>
+</nav>
+
+<main class="max-w-7xl mx-auto px-4 py-6">
+
+<!-- ABA 1: APRESENTAÇÃO -->
+<section id="projeto" class="tab-content active">
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-6 shadow-lg mb-6">
+        <h2 class="text-2xl font-bold text-brand-gold mb-4">AK‑ARANY SAS ALPHA</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Plataforma de fiscalização e patrulha aeronáutica. Baseada na geometria e concepção da aeronave <strong>Berkut 360</strong>, com modernização e motorização <strong>ULPower UL350iS</strong> — 130 HP.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <h3 class="font-bold text-lg mb-2 text-slate-200">🎯 Objetivo</h3>
+                <p class="text-sm text-slate-400">Reavaliação, engenharia e inovação aplicada a plataformas existentes, com fins didáticos e de desenvolvimento tecnológico.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2 text-slate-200">📍 Sobre o Nome</h3>
+                <p class="text-sm text-slate-400"><strong>Arany Sas</strong> = Águia Dourada (húngaro). Homenagem à herança e ao espírito de voo.</p>
+            </div>
+        </div>
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 text-sm text-amber-300">
+            <i class="fa-solid fa-triangle-exclamation mr-2"></i>
+            <strong>Projeto experimental e conceitual — não substitui projetos oficiais, certificação ou homologação.</strong>
+        </div>
+    </div>
+</section>
+
+<!-- ABA 2: MOTOR + TELEMETRIA -->
+<section id="tecnico" class="tab-content">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <!-- Motor -->
+        <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+            <h3 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-gear text-brand-gold"></i> Planta Motriz — UL350iS
+            </h3>
+            <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 mb-4 flex justify-center">
+                <canvas id="engineCanvas" width="400" height="260" class="w-full max-w-[400px]"></canvas>
+            </div>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Potência</span><span class="block font-semibold">130 HP @ 3300 RPM</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Cilindros</span><span class="block font-semibold">4 Opostos (Boxer)</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Cilindrada</span><span class="block font-semibold">3503 cc</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Massa Seca</span><span class="block font-semibold">78,5 kg</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Injeção</span><span class="block font-semibold">FADEC Multiponto</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Ignição</span><span class="block font-semibold">Dupla Eletrônica</span></div>
+            </div>
         </div>
 
-        <!-- BANNER INFORMATIVO -->
-        <section class="bg-gradient-to-r from-slate-900 via-navy-900 to-slate-900 border border-slate-800 rounded-2xl p-8 relative overflow-hidden shadow-2xl">
-            <div class="absolute -right-10 -bottom-10 opacity-10 text-slate-100 pointer-events-none">
-                <i class="fa-solid fa-radar text-9xl"></i>
+        <!-- Telemetria -->
+        <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+            <h3 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-brand-gold"></i> Telemetria & Sensores
+            </h3>
+            <div class="space-y-4 mb-6">
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Altitude (m)</span><span id="altVal" class="font-mono text-brand-gold">914 m</span></div>
+                <input type="range" id="altInput" min="300" max="2000" step="10" value="914" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Velocidade (km/h)</span><span id="spdVal" class="font-mono text-brand-gold">320 km/h</span></div>
+                <input type="range" id="spdInput" min="150" max="450" step="5" value="320" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Pitch Gimbal (°)</span><span id="pitchVal" class="font-mono text-brand-gold">-45°</span></div>
+                <input type="range" id="pitchInput" min="-85" max="-15" step="1" value="-45" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>FOV (°)</span><span id="fovVal" class="font-mono text-brand-gold">45°</span></div>
+                <input type="range" id="fovInput" min="10" max="90" step="1" value="45" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
             </div>
-            <div class="max-w-3xl space-y-4 relative z-10">
-                <span class="text-gold-500 text-xs font-mono tracking-widest uppercase font-bold">Documentação Unificada de Engenharia</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">Integração de Motorização UL350iS e Carga Útil Berkut 360</h2>
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                    Painel unificado combinando a prancha de integração funcional do motor <strong>ULPower UL350iS</strong> (130 HP) em rotação contínua e a suíte de simulação e patrulha em tempo real do sistema de sensores FLIR/Multiespectral <strong>Berkut 360</strong>.
-                </p>
-            </div>
-        </section>
-
-        <!-- SEÇÃO 1: MOTORIZAÇÃO EM OPERAÇÃO -->
-        <section id="motorizacao" class="space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 class="text-2xl font-bold text-white flex items-center gap-3">
-                    <i class="fa-solid fa-gear text-gold-500"></i> Planta Motriz: ULPower UL350iS
-                </h3>
-                <span class="text-xs font-mono bg-blue-500/10 text-blue-400 px-3 py-1 rounded-full border border-blue-500/20">130 HP @ 3300 RPM</span>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Ficha Técnica -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6 flex flex-col justify-between space-y-6">
-                    <div>
-                        <h4 class="text-lg font-bold text-slate-100 mb-2">Ficha Técnica do Motor</h4>
-                        <p class="text-xs text-slate-400 mb-4">Motor de 4 cilindros opostos com injeção eletrônica multiponto FADEC.</p>
-                        
-                        <dl class="space-y-3 text-sm font-mono">
-                            <div class="flex justify-between py-1.5 border-b border-slate-800">
-                                <dt class="text-slate-400">Potência Máxima:</dt>
-                                <dd class="text-gold-500 font-bold">130 HP (97 kW)</dd>
-                            </div>
-                            <div class="flex justify-between py-1.5 border-b border-slate-800">
-                                <dt class="text-slate-400">Cilindrada:</dt>
-                                <dd class="text-slate-200">3503 cc</dd>
-                            </div>
-                            <div class="flex justify-between py-1.5 border-b border-slate-800">
-                                <dt class="text-slate-400">Arquitetura:</dt>
-                                <dd class="text-slate-200">4 Cilindros Opostos</dd>
-                            </div>
-                            <div class="flex justify-between py-1.5 border-b border-slate-800">
-                                <dt class="text-slate-400">Massa (Seco):</dt>
-                                <dd class="text-slate-200">78.5 kg</dd>
-                            </div>
-                            <div class="flex justify-between py-1.5 border-b border-slate-800">
-                                <dt class="text-slate-400">Alimentação:</dt>
-                                <dd class="text-slate-200">Injeção/Ignição Dupla</dd>
-                            </div>
-                        </dl>
-                    </div>
-
-                    <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-3 text-xs text-amber-400 flex items-start gap-2.5">
-                        <i class="fa-solid fa-triangle-exclamation text-base mt-0.5"></i>
-                        <span><strong>Aviso:</strong> Renderização gráfica baseada na geometria e na flange de saída do UL350iS.</span>
-                    </div>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Alcance</span>
+                    <span id="outSlant" class="text-sm font-mono font-bold text-emerald-400">0 m</span>
                 </div>
-
-                <!-- Canvas do Motor em Rotação -->
-                <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-4 flex flex-col items-center justify-center relative min-h-[420px]">
-                    <div class="absolute top-4 left-4 text-xs font-mono text-slate-400">
-                        <i class="fa-solid fa-rotate me-1 animate-spin text-gold-500"></i> Simulação em Tempo Real
-                    </div>
-                    <canvas id="engineCanvas" width="700" height="380" class="w-full h-auto bg-slate-950 rounded-lg border border-slate-800"></canvas>
-                    <div class="w-full flex justify-between items-center text-xs text-slate-500 mt-3 px-2 font-mono">
-                        <span>Status: Rotação Ativa (Canvas API)</span>
-                        <span>AK-ARANY-UL350iS-DSG</span>
-                    </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Faixa</span>
+                    <span id="outSwath" class="text-sm font-mono font-bold text-emerald-400">0 m</span>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Área</span>
+                    <span id="outArea" class="text-sm font-mono font-bold text-emerald-400">0 m²</span>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- SEÇÃO 2: TELEMETRIA & GIMBAL -->
-        <section id="telemetria" class="space-y-6">
-            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h3 class="text-2xl font-bold text-white flex items-center gap-3">
-                    <i class="fa-solid fa-video text-blue-400"></i> Telemetria & Gimbal: Berkut 360
-                </h3>
-                <span class="text-xs font-mono bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20">Gimbal FLIR/EO Ativo</span>
-            </div>
+    <!-- Tabela de Registro -->
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+                <i class="fa-solid fa-table-list text-brand-gold"></i> Registro de Patrulha
+            </h3>
+            <button id="addLogBtn" class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-3 py-1.5 rounded text-xs font-bold transition flex items-center gap-2">
+                <i class="fa-solid fa-plus"></i> Capturar
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+                <thead class="bg-slate-900 text-slate-400 font-mono uppercase border-b border-slate-700">
+                    <tr>
+                        <th class="p-3">Horário</th>
+                        <th class="p-3">Altitude (m)</th>
+                        <th class="p-3">Velocidade (km/h)</th>
+                        <th class="p-3">Alcance (m)</th>
+                        <th class="p-3">Área (m²)</th>
+                        <th class="p-3">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="telemetryTable" class="divide-y divide-slate-800"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Controles do Sensor -->
-                <div class="bg-slate-900/90 border border-slate-800 rounded-xl p-6 space-y-5">
-                    <h4 class="text-lg font-bold text-slate-100">Controles do Sensor</h4>
-                    <p class="text-xs text-slate-400">Ajuste altitude, velocidade, ângulo e campo de visão para calcular a cobertura no solo.</p>
+<!-- ABA 3: REGISTRO -->
+<section id="registro" class="tab-content">
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-bold text-brand-gold mb-4">📋 Fórmulas & Referências</h2>
+        <pre class="bg-slate-900 p-4 rounded-lg text-xs text-slate-300 whitespace-pre-wrap leading-relaxed"><code>
+FÓRMULAS APLICADAS:
+  Alcance Inclinado  R = h / sin(θ)
+  Largura de Faixa   W = 2 × R × tan(FOV/2)
+  Área Coberta       A = W × (W / 1,5)
 
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <label for="inputAlt" class="text-slate-300">Altitude (m):</label>
-                                <span id="valAlt" class="text-blue-400 font-bold">914,4 m</span>
-                            </div>
-                            <input type="range" id="inputAlt" min="300" max="2000" step="10" value="914.4" class="w-full accent-blue-500 bg-slate-800 rounded">
-                        </div>
+REFERÊNCIAS:
+  Plataforma: Berkut 360
+  Motor: ULPower UL350iS — 130 HP / 3300 RPM
+  Nome: Arany Sas = Águia Dourada (húngaro)
+  Local: Brasil · Ano: 2026
 
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <label for="inputVel" class="text-slate-300">Velocidade (km/h):</label>
-                                <span id="valVel" class="text-blue-400 font-bold">320,0 km/h</span>
-                            </div>
-                            <input type="range" id="inputVel" min="150" max="450" step="5" value="320" class="w-full accent-blue-500 bg-slate-800 rounded">
-                        </div>
+AVISOS:
+  - Projeto conceitual; não substitui projetos oficiais
+  - Não constitui certificação ou homologação
+  - Cálculos para fins educativos e ilustrativos
+        </code></pre>
+    </div>
+</section>
 
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <label for="inputPitch" class="text-slate-300">Inclin. Gimbal Pitch (°):</label>
-                                <span id="valPitch" class="text-gold-500 font-bold">-45,0°</span>
-                            </div>
-                            <input type="range" id="inputPitch" min="-85" max="-15" step="1" value="-45" class="w-full accent-gold-500 bg-slate-800 rounded">
-                        </div>
+</main>
 
-                        <div>
-                            <div class="flex justify-between text-xs font-mono mb-1">
-                                <label for="inputFOV" class="text-slate-300">FOV Horizontal (°):</label>
-                                <span id="valFOV" class="text-slate-200 font-bold">45,0°</span>
-                            </div>
-                            <input type="range" id="inputFOV" min="10" max="90" step="1" value="45" class="w-full accent-slate-500 bg-slate-800 rounded">
-                        </div>
-                    </div>
+<footer class="border-t border-slate-800 py-6 mt-8 text-center text-xs text-slate-500">
+    <p>AK-ARANY SAS ALPHA · Plataforma Berkut 360 · Brasil</p>
+</footer>
 
-                    <button id="btnSimular" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-lg text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30">
-                        <i class="fa-solid fa-play"></i> Iniciar Patrulha
-                    </button>
-                </div>
+<script>
+// === NAVEGAÇÃO POR ABAS ===
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(b => { b.classList.remove('active'); b.classList.add('text-slate-400', 'hover:text-slate-200'); });
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active'); btn.classList.remove('text-slate-400');
+        document.getElementById(target).classList.add('active');
+    });
+});
 
-                <!-- Painel de Resultados -->
-                <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-xl p-6 flex flex-col justify-between space-y-4">
-                    <div>
-                        <div class="flex justify-between items-center mb-4">
-                            <h4 class="text-lg font-bold text-slate-100">Barramento de Dados Aviônicos</h4>
-                            <span id="badgeStatus" class="text-xs font-mono px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">STANDBY</span>
-                        </div>
+// === MOTOR ANIMADO ===
+const canvas = document.getElementById('engineCanvas');
+const ctx = canvas.getContext('2d');
+let angle = 0, sparkPhase = 0;
+function drawEngine() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const cx = canvas.width/2, cy = canvas.height/2;
 
-                        <!-- Métricas -->
-                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-                            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                                <span class="text-xs text-slate-400 block font-mono">Alcance Inclinado</span>
-                                <span id="outSlant" class="text-xl font-bold font-mono text-white">1.293,2 m</span>
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800">
-                                <span class="text-xs text-slate-400 block font-mono">Largura de Faixa</span>
-                                <span id="outSwath" class="text-xl font-bold font-mono text-blue-400">1.071,3 m</span>
-                            </div>
-                            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 col-span-2 sm:col-span-1">
-                                <span class="text-xs text-slate-400 block font-mono">Área Coberta</span>
-                                <span id="outArea" class="text-xl font-bold font-mono text-gold-500">765.102,8 m²</span>
-                            </div>
-                        </div>
+    // Cárter
+    ctx.fillStyle='#334155'; ctx.strokeStyle='#64748B'; ctx.lineWidth=2;
+    ctx.fillRect(cx-50, cy-35, 100, 70); ctx.strokeRect(cx-50, cy-35, 100, 70);
 
-                        <!-- Log de Telemetria -->
-                        <div class="overflow-x-auto rounded-lg border border-slate-800">
-                            <table class="w-full text-left text-xs font-mono">
-                                <thead class="bg-slate-950 text-slate-400 border-b border-slate-800">
-                                    <tr>
-                                        <th class="p-2.5">Tempo (s)</th>
-                                        <th class="p-2.5">Alt (m)</th>
-                                        <th class="p-2.5">Vel (km/h)</th>
-                                        <th class="p-2.5">Pitch (°)</th>
-                                        <th class="p-2.5">Área Solo (m²)</th>
-                                        <th class="p-2.5">Status</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="telemetryLog" class="divide-y divide-slate-800 text-slate-300">
-                                    <tr>
-                                        <td colspan="6" class="p-4 text-center text-slate-500">Aguardando inicialização...</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="text-xs text-slate-500 font-mono text-right">
-                        <span>[BERKUT-360-SYS] SSD Aviônico Interno Pronto</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="border-t border-slate-800 bg-slate-950 py-6 mt-12 text-center text-xs text-slate-500 font-mono">
-        <p>AK-ARANY SAS ALPHA · Berkut 360 · Sistema Unificado de Engenharia e Operações</p>
-    </footer>
-
-    <!-- SCRIPTS UNIFICADOS -->
-    <script>
-        // === ANIMAÇÃO DO MOTOR UL350iS EM OPERAÇÃO ===
-        let anguloFlange = 0;
-        let cicloCombustao = 0;
-
-        function renderEngineDiagram() {
-            const canvas = document.getElementById('engineCanvas');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            const w = canvas.width;
-            const h = canvas.height;
-
-            ctx.clearRect(0, 0, w, h);
-
-            const cx = w / 2;
-            const cy = h / 2 - 5;
-
-            // Coletores de Escape Inferiores
-            ctx.strokeStyle = '#94a3b8';
-            ctx.lineWidth = 6;
-            ctx.beginPath();
-            ctx.moveTo(cx - 180, cy + 30);
-            ctx.quadraticCurveTo(cx - 150, cy + 120, cx - 60, cy + 110);
-            ctx.moveTo(cx + 180, cy + 30);
-            ctx.quadraticCurveTo(cx + 150, cy + 120, cx + 60, cy + 110);
-            ctx.stroke();
-
-            // Panela de Escape Inferior
-            ctx.fillStyle = '#475569';
-            ctx.strokeStyle = '#334155';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            if (ctx.roundRect) {
-                ctx.roundRect(cx - 100, cy + 100, 200, 35, 10);
-            } else {
-                ctx.rect(cx - 100, cy + 100, 200, 35);
-            }
+    // Cilindros opostos
+    [-90, 90].forEach((yOff, idx) => {
+        ctx.fillStyle='#1E293B';
+        ctx.fillRect(cx-130, cy+yOff-12, 75, 24); ctx.strokeRect(cx-130, cy+yOff-12, 75, 24);
+        ctx.fillRect(cx+55, cy+yOff-12, 75, 24); ctx.strokeRect(cx+55, cy+yOff-12, 75, 24);
+        if (Math.floor(sparkPhase+idx)%2===0) {
+            ctx.fillStyle='#F59E0B'; ctx.beginPath();
+            ctx.arc(cx-125, cy+yOff, 4, 0, Math.PI*2);
+            ctx.arc(cx+130, cy+yOff, 4, 0, Math.PI*2);
             ctx.fill();
-            ctx.stroke();
-
-            // Cárter Central
-            ctx.fillStyle = '#cbd5e1';
-            ctx.strokeStyle = '#64748b';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            if (ctx.roundRect) {
-                ctx.roundRect(cx - 90, cy - 60, 180, 120, 15);
-            } else {
-                ctx.rect(cx - 90, cy - 60, 180, 120);
-            }
-            ctx.fill();
-            ctx.stroke();
-
-            // Cárter de Óleo Inferior
-            ctx.beginPath();
-            ctx.moveTo(cx - 60, cy + 60);
-            ctx.lineTo(cx - 40, cy + 110);
-            ctx.lineTo(cx + 40, cy + 110);
-            ctx.lineTo(cx + 60, cy + 60);
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
-
-            // Aletas de Arrefecimento
-            ctx.strokeStyle = '#94a3b8';
-            ctx.lineWidth = 1;
-            for (let x = cx - 30; x <= cx + 30; x += 8) {
-                ctx.beginPath();
-                ctx.moveTo(x, cy + 65);
-                ctx.lineTo(x, cy + 105);
-                ctx.stroke();
-            }
-
-            // Cilindros Opostos
-            const posCilindros = [-150, 100];
-            posCilindros.forEach((xOffset, index) => {
-                ctx.fillStyle = '#1e293b';
-                ctx.fillRect(cx + xOffset, cy - 50, 50, 90);
-
-                ctx.strokeStyle = '#64748b';
-                ctx.lineWidth = 1.5;
-                for (let y = cy - 45; y < cy + 35; y += 7) {
-                    ctx.beginPath();
-                    ctx.moveTo(cx + xOffset - 4, y);
-                    ctx.lineTo(cx + xOffset + 54, y);
-                    ctx.stroke();
-                }
-
-                ctx.fillStyle = '#0f172a';
-                ctx.fillRect(cx + (xOffset < 0 ? xOffset - 15 : xOffset + 50), cy - 40, 15, 70);
-
-                // Faísca alternada
-                if ((Math.floor(cicloCombustao) % 2) === index) {
-                    ctx.fillStyle = '#f59e0b';
-                    ctx.beginPath();
-                    ctx.arc(cx + (xOffset < 0 ? xOffset - 8 : xOffset + 58), cy - 5, 4, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            });
-
-            // Tubos de Admissão e Filtro
-            ctx.strokeStyle = '#334155';
-            ctx.lineWidth = 8;
-            ctx.beginPath();
-            ctx.moveTo(cx - 130, cy - 50);
-            ctx.lineTo(cx, cy - 80);
-            ctx.lineTo(cx + 130, cy - 50);
-            ctx.stroke();
-
-            ctx.fillStyle = '#2563eb';
-            ctx.strokeStyle = '#1d4ed8';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(cx, cy - 85, 20, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-
-            // Flange Dourada em Rotação
-            ctx.save();
-            ctx.translate(cx, cy);
-
-            ctx.fillStyle = '#94a3b8';
-            ctx.strokeStyle = '#475569';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(0, 0, 45, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.rotate(anguloFlange);
-
-            ctx.fillStyle = '#c8a951';
-            ctx.strokeStyle = '#b09038';
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.arc(0, 0, 32, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.fillStyle = '#0f172a';
-            ctx.beginPath();
-            ctx.arc(0, 0, 14, 0, Math.PI * 2);
-            ctx.fill();
-
-            const numFuros = 6;
-            ctx.fillStyle = '#1e293b';
-            for (let i = 0; i < numFuros; i++) {
-                const a = (i * 2 * Math.PI) / numFuros;
-                const fx = 23 * Math.cos(a);
-                const fy = 23 * Math.sin(a);
-                ctx.beginPath();
-                ctx.arc(fx, fy, 3.5, 0, Math.PI * 2);
-                ctx.fill();
-            }
-
-            ctx.restore();
-
-            // Rótulos
-            ctx.fillStyle = '#94a3b8';
-            ctx.font = '12px "JetBrains Mono"';
-            ctx.fillText('Admissão & Filtro', cx - 60, cy - 115);
-            ctx.fillText('Flange de Saída (Girando)', cx - 90, cy + 155);
-
-            anguloFlange += 0.12;
-            cicloCombustao += 0.08;
-
-            requestAnimationFrame(renderEngineDiagram);
         }
+    });
 
-        // === CÁLCULO DE TELEMETRIA ===
-        function calcularAreaCoberta(alt, pitchGraus, fovGraus) {
-            const pitchRad = Math.abs(pitchGraus) * Math.PI / 180;
-            const fovRad = fovGraus * Math.PI / 180;
+    // Flange rotativa
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(angle);
+    ctx.strokeStyle='#C8A951'; ctx.lineWidth=4;
+    ctx.beginPath(); ctx.arc(0,0,28,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-28,0); ctx.lineTo(28,0); ctx.moveTo(0,-28); ctx.lineTo(0,28); ctx.stroke();
+    ctx.restore();
 
-            let alcanceInclinado;
-            if (pitchRad < 0.01) {
-                alcanceInclinado = alt;
-            } else {
-                alcanceInclinado = alt / Math.sin(pitchRad);
-            }
+    angle += 0.05; sparkPhase += 0.08;
+    requestAnimationFrame(drawEngine);
+}
+drawEngine();
 
-            const larguraFaixa = 2 * alcanceInclinado * Math.tan(fovRad / 2);
-            const area = larguraFaixa * (larguraFaixa / 1.5);
-            return { alcanceInclinado, larguraFaixa, area };
-        }
+// === TELEMETRIA ===
+const altInput = document.getElementById('altInput');
+const spdInput = document.getElementById('spdInput');
+const pitchInput = document.getElementById('pitchInput');
+const fovInput = document.getElementById('fovInput');
 
-        // === ELEMENTOS DA INTERFACE ===
-        const inputAlt = document.getElementById('inputAlt');
-        const inputVel = document.getElementById('inputVel');
-        const inputPitch = document.getElementById('inputPitch');
-        const inputFOV = document.getElementById('inputFOV');
+function calc() {
+    const h = +altInput.value, v = +spdInput.value, pitchDeg = +pitchInput.value, fovDeg = +fovInput.value;
+    document.getElementById('altVal').innerText = `${h} m`;
+    document.getElementById('spdVal').innerText = `${v} km/h`;
+    document.getElementById('pitchVal').innerText = `${pitchDeg}°`;
+    document.getElementById('fovVal').innerText = `${fovDeg}°`;
 
-        const valAlt = document.getElementById('valAlt');
-        const valVel = document.getElementById('valVel');
-        const valPitch = document.getElementById('valPitch');
-        const valFOV = document.getElementById('valFOV');
+    const pitchRad = Math.abs(pitchDeg) * Math.PI/180;
+    const fovRad = fovDeg * Math.PI/180;
+    const slant = pitchRad < 0.01 ? h : h / Math.sin(pitchRad);
+    const swath = 2 * slant * Math.tan(fovRad/2);
+    const area = swath * (swath/1.5);
 
-        const outSlant = document.getElementById('outSlant');
-        const outSwath = document.getElementById('outSwath');
-        const outArea = document.getElementById('outArea');
-        const telemetryLog = document.getElementById('telemetryLog');
-        const badgeStatus = document.getElementById('badgeStatus');
-        const btnSimular = document.getElementById('btnSimular');
+    document.getElementById('outSlant').innerText = `${Math.round(slant)} m`;
+    document.getElementById('outSwath').innerText = `${Math.round(swath)} m`;
+    document.getElementById('outArea').innerText = `${Math.round(area).toLocaleString('pt-BR')} m²`;
+    return {h, v, slant, area};
+}
+[altInput, spdInput, pitchInput, fovInput].forEach(i => i.addEventListener('input', calc));
 
-        function formatarBR(valor, casas = 1) {
-            return valor.toLocaleString('pt-BR', { maximumFractionDigits: casas, minimumFractionDigits: casas });
-        }
+// === TABELA DE REGISTRO ===
+const tableBody = document.getElementById('telemetryTable');
+document.getElementById('addLogBtn').addEventListener('click', () => {
+    const d = calc();
+    const now = new Date().toLocaleTimeString('pt-BR');
+    const altJit = Math.round(d.h + (Math.random()*6-3));
+    const spdJit = Math.round(d.v + (Math.random()*4-2));
+    const status = Math.random()>0.1 ? ['RASTREANDO','MONITORANDO','VARRENDO'][Math.floor(Math.random()*3)] : 'CALIBRANDO';
+    const statusClass = status==='CALIBRANDO' ? 'bg-amber-500/20 text-amber-400' : 'bg-emerald-500/20 text-emerald-400';
+    
+    const row = document.createElement('tr');
+    row.className = 'hover:bg-slate-800/50 transition';
+    row.innerHTML = `
+        <td class="p-3 font-mono text-slate-400">${now}</td>
+        <td class="p-3">${altJit}</td>
+        <td class="p-3">${spdJit}</td>
+        <td class="p-3 font-mono">${Math.round(d.slant)}</td>
+        <td class="p-3 font-mono">${Math.round(d.area).toLocaleString('pt-BR')}</td>
+        <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${statusClass}">${status}</span></td>
+    `;
+    tableBody.prepend(row);
+    if (tableBody.children.length > 6) tableBody.removeChild(tableBody.lastChild);
+});
 
-        function atualizarValores() {
-            const alt = parseFloat(inputAlt.value);
-            const pitch = parseFloat(inputPitch.value);
-            const fov = parseFloat(inputFOV.value);
-
-            valAlt.textContent = `${formatarBR(alt)} m`;
-            valPitch.textContent = `${formatarBR(pitch)}°`;
-            valFOV.textContent = `${formatarBR(fov)}°`;
-
-            const { alcanceInclinado, larguraFaixa, area } = calcularAreaCoberta(alt, pitch, fov);
-            
-            outSlant.textContent = `${formatarBR(alcanceInclinado)} m`;
-            outSwath.textContent = `${formatarBR(larguraFaixa)} m`;
-            outArea.textContent = `${formatarBR(area)} m²`;
-        }
-
-        [inputAlt, inputPitch, inputFOV].forEach(el => {
-            el.addEventListener('input', atualizarValores);
-        });
-
-        // SIMULAÇÃO DE PATRULHA
-        btnSimular.addEventListener('click', () => {
-            btnSimular.disabled = true;
-            btnSimular.classList.add('opacity-60');
-            
-            badgeStatus.textContent = "GRAVANDO";
-            badgeStatus.className = "text-xs font-mono px-2.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 animate-pulse";
-            
-            telemetryLog.innerHTML = "";
-
-            const altBase = parseFloat(inputAlt.value);
-            const velBase = parseFloat(inputVel.value);
-            const pitch = parseFloat(inputPitch.value);
-            const fov = parseFloat(inputFOV.value);
-
-            let segundo = 1;
-            const interval = setInterval(() => {
-                const altSim = altBase + (Math.random() * 6 - 3);
-                const velSim = velBase + (Math.random() * 4 - 2);
-
-                const { area } = calcularAreaCoberta(altSim, pitch, fov);
-
-                const tr = document.createElement('tr');
-                tr.className = "hover:bg-slate-800/50 transition";
-                tr.innerHTML = `
-                    <td class="p-2.5 font-bold text-blue-400">${segundo} s</td>
-                    <td class="p-2.5">${formatarBR(altSim)}</td>
-                    <td class="p-2.5">${formatarBR(velSim)}</td>
-                    <td class="p-2.5">${formatarBR(pitch)}</td>
-                    <td class="p-2.5 text-gold-500 font-bold">${formatarBR(area)}</td>
-                    <td class="p-2.5"><span class="text-emerald-400 font-bold">GRAVANDO</span></td>
-                `;
-                telemetryLog.appendChild(tr);
-
-                segundo++;
-                if (segundo > 5) {
-                    clearInterval(interval);
-                    badgeStatus.textContent = "STANDBY";
-                    badgeStatus.className = "text-xs font-mono px-2.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20";
-                    btnSimular.disabled = false;
-                    btnSimular.classList.remove('opacity-60');
-                }
-            }, 600);
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            renderEngineDiagram();
-            atualizarValores();
-        });
-    </script>
-
+calc();
+</script>
 </body>
 </html>
