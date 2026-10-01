@@ -1,48 +1,44 @@
-# AK‑ARANY SAS ALPHA
-## Plataforma de Patrulha Aeronáutica
+# Nome do Projeto
 
-> **Base:** Berkut 360 · **Motor:** ULPower UL350iS (130 HP) · **Brasil — 2026**
-> *Arany Sas = Águia Dourada (húngaro)*
+> Uma breve descrição em uma ou duas frases sobre o que este projeto faz.
 
 ---
 
-## � Visão Geral
-
-Projeto experimental de engenharia e modernização aeronáutica. Reavaliação e aprimoramento da plataforma **Berkut 360** com motorização **ULPower UL350iS**, desenvolvido com fins didáticos e de inovação tecnológica.
-
-🔗 **Página oficial:**  
-`https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/`
-
----
-
-## 📂 Estrutura
-
-| Arquivo | Função |
-|---|---|
-| `index.html` | Página principal completa — apresentação, motor animado, telemetria |
-| `assets/capa_pista_lexkomendir.webp.png` | Imagem de capa |
-| `README.md` | Esta documentação |
-| `robots.txt` | Indexação Google |
-| `sitemap.xml` | Mapa do site |
+## 📌 Sumário
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Como Executar](#-como-executar)
+- [Como Usar](#-como-usar)
+- [Licença](#-licença)
 
 ---
 
-## ⚙️ Conteúdo da Página
+## 🚀 Sobre o Projeto
 
-A página funciona com **3 abas integradas**:
+Descreva aqui com mais detalhes o objetivo do projeto, qual problema ele resolve e quais são as suas principais funcionalidades.
 
-| Aba | Conteúdo |
-|---|---|
-| 📄 **Projeto** | Apresentação, objetivo, origem do nome, avisos |
-| ⚙️ **Técnico** | Motor UL350iS animado em tempo real + controles de telemetria + cálculos aviônicos |
-| 📋 **Registro** | Fórmulas aplicadas e dados de referência |
+---
 
-### Ficha Técnica — UL350iS
-- **Potência:** 130 HP @ 3300 RPM
-- **Arquitetura:** 4 cilindros opostos (Boxer)
-- **Cilindrada:** 3503 cc
-- **Massa seca:** 78,5 kg
-- **Gerenciamento:** FADEC / Injeção eletrônica multiponto
-- **Ignição:** Dupla eletrônica dinâmica
+## 🛠️ Tecnologias Utilizadas
 
-### Fórmulas Aplicadas
+Este projeto foi desenvolvido com as seguintes tecnologias:
+
+- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML) / [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS) / [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+- [Node.js](https://nodejs.org/)
+- [Git](https://git-scm.com/)
+
+---
+
+## 🔧 Como Executar
+
+### Pré-requisitos
+
+Antes de começar, você precisará ter instalado em sua máquina:
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org/) (se aplicável)
+
+### Passo a passo
+
+1. **Clone este repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
