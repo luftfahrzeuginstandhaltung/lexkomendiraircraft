@@ -1,80 +1,315 @@
-# AK‑ARANY SAS ALPHA — Projeto de Modernização Aeronáutica
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK-ARANY SAS ALPHA · Plataforma de Patrulha</title>
+    <meta name="description" content="AK-ARANY SAS ALPHA — Projeto experimental baseado no Berkut 360. Motorização ULPower UL350iS. Telemetria e aviônica integrada. Brasil.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#C8A951',
+                            emerald: '#10B981',
+                            dark: '#0F172A',
+                            panel: '#1E293B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active { background-color: #C8A95120; border-color: #C8A951; color: #C8A951; }
+    </style>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans min-h-screen">
 
-![Status](https://img.shields.io/badge/Status-Estudo_Conceitual-blue)
-![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub_Pages-green)
-![Licença](https://img.shields.io/badge/Licença-Experimental-orange)
+<!-- CABEÇALHO -->
+<header class="border-b border-slate-700 bg-slate-900/80 backdrop-blur sticky top-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center space-x-3">
+            <i class="fa-solid fa-plane-triangle text-brand-gold text-2xl"></i>
+            <div>
+                <h1 class="text-xl font-bold tracking-wider text-slate-100">AK-ARANY SAS ALPHA</h1>
+                <p class="text-xs text-slate-400">Plataforma Berkut 360 · Patrulha & Telemetria</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-3 text-xs">
+            <span class="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> ONLINE
+            </span>
+        </div>
+    </div>
+</header>
 
-![Capa](capa_pista_lexkomendir.webp.png)
+<!-- ABAS DE NAVEGAÇÃO -->
+<nav class="max-w-7xl mx-auto px-4 pt-4">
+    <div class="flex flex-wrap gap-2 border-b border-slate-700">
+        <button class="tab-btn active px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent" data-tab="projeto">
+            <i class="fa-solid fa-info-circle mr-1"></i> Projeto
+        </button>
+        <button class="tab-btn px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent text-slate-400 hover:text-slate-200" data-tab="tecnico">
+            <i class="fa-solid fa-gear mr-1"></i> Técnico
+        </button>
+        <button class="tab-btn px-4 py-2 text-sm font-semibold rounded-t-lg border border-transparent text-slate-400 hover:text-slate-200" data-tab="registro">
+            <i class="fa-solid fa-file-code mr-1"></i> Registro
+        </button>
+    </div>
+</nav>
 
-> Plataforma Berkut 360 — Reavaliação, engenharia e inovação experimental aeronáutica  
-> Brasil — 2026
+<main class="max-w-7xl mx-auto px-4 py-6">
 
----
+<!-- ABA 1: APRESENTAÇÃO / DOCUMENTAÇÃO -->
+<section id="projeto" class="tab-content active">
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-6 shadow-lg mb-6">
+        <h2 class="text-2xl font-bold text-brand-gold mb-4">AK‑ARANY SAS ALPHA</h2>
+        <p class="text-slate-300 mb-6 leading-relaxed">
+            Plataforma de fiscalização e patrulha aeronáutica. Baseada na geometria e concepção da aeronave <strong>Berkut 360</strong>, com modernização e motorização <strong>ULPower UL350iS</strong> — 130 HP.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+                <h3 class="font-bold text-lg mb-2 text-slate-200">🎯 Objetivo</h3>
+                <p class="text-sm text-slate-400">Reavaliação, engenharia e inovação aplicada a plataformas existentes, com fins didáticos e de desenvolvimento tecnológico.</p>
+            </div>
+            <div>
+                <h3 class="font-bold text-lg mb-2 text-slate-200">📍 Sobre o Nome</h3>
+                <p class="text-sm text-slate-400"><strong>Arany Sas</strong> = Águia Dourada (húngaro). Homenagem à herança e ao espírito de voo.</p>
+            </div>
+        </div>
+        <div class="bg-amber-500/10 border border-amber-500/20 rounded-lg p-4 text-sm text-amber-300">
+            <i class="fa-solid fa-triangle-exclamation mr-2"></i>
+            <strong>Projeto experimental e conceitual — não substitui projetos oficiais, certificação ou homologação.</strong>
+        </div>
+    </div>
+</section>
 
-## 🦅 Sobre o Projeto
+<!-- ABA 2: MOTOR + TELEMETRIA -->
+<section id="tecnico" class="tab-content">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        <!-- Motor -->
+        <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+            <h3 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-gear text-brand-gold"></i> Planta Motriz — UL350iS
+            </h3>
+            <div class="bg-slate-900 border border-slate-800 rounded-lg p-4 mb-4 flex justify-center">
+                <canvas id="engineCanvas" width="400" height="260" class="w-full max-w-[400px]"></canvas>
+            </div>
+            <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Potência</span><span class="block font-semibold">130 HP @ 3300 RPM</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Cilindros</span><span class="block font-semibold">4 Opostos (Boxer)</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Cilindrada</span><span class="block font-semibold">3503 cc</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Massa Seca</span><span class="block font-semibold">78,5 kg</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Injeção</span><span class="block font-semibold">FADEC Multiponto</span></div>
+                <div class="bg-slate-800/50 p-2.5 rounded"><span class="text-slate-400">Ignição</span><span class="block font-semibold">Dupla Eletrônica</span></div>
+            </div>
+        </div>
 
-O **AK‑ARANY SAS ALPHA** é uma iniciativa voltada para a **modernização e reavaliação técnica** da plataforma **Berkut 360**, aeronave de configuração canard de dois lugares.
+        <!-- Telemetria -->
+        <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+            <h3 class="text-lg font-bold text-slate-200 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-brand-gold"></i> Telemetria & Sensores
+            </h3>
+            <div class="space-y-4 mb-6">
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Altitude (m)</span><span id="altVal" class="font-mono text-brand-gold">914 m</span></div>
+                <input type="range" id="altInput" min="300" max="2000" step="10" value="914" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Velocidade (km/h)</span><span id="spdVal" class="font-mono text-brand-gold">320 km/h</span></div>
+                <input type="range" id="spdInput" min="150" max="450" step="5" value="320" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>Pitch Gimbal (°)</span><span id="pitchVal" class="font-mono text-brand-gold">-45°</span></div>
+                <input type="range" id="pitchInput" min="-85" max="-15" step="1" value="-45" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+                <div><div class="flex justify-between text-xs text-slate-300 mb-1"><span>FOV (°)</span><span id="fovVal" class="font-mono text-brand-gold">45°</span></div>
+                <input type="range" id="fovInput" min="10" max="90" step="1" value="45" class="w-full accent-amber-500 bg-slate-800 rounded"></div>
+            </div>
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Alcance</span>
+                    <span id="outSlant" class="text-sm font-mono font-bold text-emerald-400">0 m</span>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Faixa</span>
+                    <span id="outSwath" class="text-sm font-mono font-bold text-emerald-400">0 m</span>
+                </div>
+                <div class="bg-slate-900/80 p-3 rounded-lg border border-slate-700">
+                    <span class="text-[10px] uppercase text-slate-400">Área</span>
+                    <span id="outArea" class="text-sm font-mono font-bold text-emerald-400">0 m²</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-- **Arany Sas** = Águia Dourada (húngaro)
-- **Foco:** Observação ambiental, patrulha e desenvolvimento tecnológico
-- Estudo conceitual — não é desenho de fabricação nem documento de certificação
+    <!-- Tabela de Registro -->
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-5 shadow-lg">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-200 flex items-center gap-2">
+                <i class="fa-solid fa-table-list text-brand-gold"></i> Registro de Patrulha
+            </h3>
+            <button id="addLogBtn" class="bg-amber-500 hover:bg-amber-600 text-slate-950 px-3 py-1.5 rounded text-xs font-bold transition flex items-center gap-2">
+                <i class="fa-solid fa-plus"></i> Capturar
+            </button>
+        </div>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-slate-300">
+                <thead class="bg-slate-900 text-slate-400 font-mono uppercase border-b border-slate-700">
+                    <tr>
+                        <th class="p-3">Horário</th>
+                        <th class="p-3">Altitude (m)</th>
+                        <th class="p-3">Velocidade (km/h)</th>
+                        <th class="p-3">Alcance (m)</th>
+                        <th class="p-3">Área (m²)</th>
+                        <th class="p-3">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="telemetryTable" class="divide-y divide-slate-800"></tbody>
+            </table>
+        </div>
+    </div>
+</section>
 
----
+<!-- ABA 3: CÓDIGO / REGISTRO -->
+<section id="registro" class="tab-content">
+    <div class="bg-brand-panel border border-slate-700 rounded-xl p-6 shadow-lg">
+        <h2 class="text-xl font-bold text-brand-gold mb-4">📋 Registro do Projeto</h2>
+        <pre class="bg-slate-900 p-4 rounded-lg text-xs text-slate-300 whitespace-pre-wrap leading-relaxed"><code>
+PROJETO: AK-ARANY SAS ALPHA
+PLATAFORMA BASE: Berkut 360
+MOTORIZAÇÃO: ULPower UL350iS — 130 HP / 3300 RPM
+TIPO: Experimental / Didático / Engenharia Aplicada
+LOCAL: Brasil
+ANO: 2026
 
-## 📁 Estrutura da Plataforma
+FÓRMULAS APLICADAS:
+  Alcance Inclinado  R = h / sin(θ)
+  Largura de Faixa   W = 2 × R × tan(FOV/2)
+  Área Coberta       A = W × (W / 1,5)
 
-| Página | Conteúdo |
-|---|---|
-| **[index.html](index.html)** | Página principal — apresentação do projeto |
-| **[pranchas.html](pranchas.html)** | 8 Pranchas Técnicas — gerar e baixar em PNG |
-| **[ia_assistente.html](ia_assistente.html)** | Assistente Arany — apresentação com voz e relógio em tempo real |
+REFERÊNCIA DE NOME:
+  Arany Sas = Águia Dourada (húngaro)
 
----
+AVISOS:
+  - Projeto conceitual; não substitui projetos oficiais
+  - Não constitui certificação ou homologação
+  - Cálculos para fins educativos e ilustrativos
+        </code></pre>
+    </div>
+</section>
 
-## 🛠️ Tecnologias Utilizadas
+</main>
 
-- **HTML5** — Estrutura semântica e acessível
-- **CSS3** — Design responsivo, variáveis visuais otimizadas
-- **JavaScript** — Geração de imagens, narração por voz e interatividade
-- **GitHub Pages** — Hospedagem gratuita e direta
+<footer class="border-t border-slate-800 py-6 mt-8 text-center text-xs text-slate-500">
+    <p>AK-ARANY SAS ALPHA · Plataforma Berkut 360 · Brasil</p>
+</footer>
 
----
+<script>
+// === NAVEGAÇÃO POR ABAS ===
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+        tabBtns.forEach(b => { b.classList.remove('active'); b.classList.add('text-slate-400', 'hover:text-slate-200'); });
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active'); btn.classList.remove('text-slate-400');
+        document.getElementById(target).classList.add('active');
+    });
+});
 
-## 🖼️ Preview das Pranchas Técnicas
+// === MOTOR ANIMADO ===
+const canvas = document.getElementById('engineCanvas');
+const ctx = canvas.getContext('2d');
+let angle = 0, sparkPhase = 0;
+function drawEngine() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const cx = canvas.width/2, cy = canvas.height/2;
 
-A plataforma gera e exporta 8 pranchas técnicas em alta resolução (PNG) cobrindo a arquitetura e subsistemas do projeto:
+    // Cárter
+    ctx.fillStyle='#334155'; ctx.strokeStyle='#64748B'; ctx.lineWidth=2;
+    ctx.fillRect(cx-50, cy-35, 100, 70); ctx.strokeRect(cx-50, cy-35, 100, 70);
 
-| Prancha | Descrição / Conteúdo |
-|---|---|
-| **Prancha 01** | Vista Geral e Geometria da Plataforma |
-| **Prancha 02** | Arranjo Geral e Cabine Tandem |
-| **Prancha 03** | Grupo Motopropulsor e Instalação |
-| **Prancha 04** | Aviônica Digital e Painel Integrado |
-| **Prancha 05** | Estrutura Canard e Superfícies de Comando |
-| **Prancha 06** | Sistema elétrico e Redundâncias |
-| **Prancha 07** | Configuração de Observação e Carga Útil |
-| **Prancha 08** | Envelope de Voo e Especificações Operacionais |
+    // Cilindros opostos
+    [-90, 90].forEach((yOff, idx) => {
+        ctx.fillStyle='#1E293B';
+        ctx.fillRect(cx-130, cy+yOff-12, 75, 24); ctx.strokeRect(cx-130, cy+yOff-12, 75, 24);
+        ctx.fillRect(cx+55, cy+yOff-12, 75, 24); ctx.strokeRect(cx+55, cy+yOff-12, 75, 24);
+        // Faísca alternada
+        if (Math.floor(sparkPhase+idx)%2===0) {
+            ctx.fillStyle='#F59E0B'; ctx.beginPath();
+            ctx.arc(cx-125, cy+yOff, 4, 0, Math.PI*2);
+            ctx.arc(cx+130, cy+yOff, 4, 0, Math.PI*2);
+            ctx.fill();
+        }
+    });
 
----
+    // Flange rotativa
+    ctx.save(); ctx.translate(cx, cy); ctx.rotate(angle);
+    ctx.strokeStyle='#C8A951'; ctx.lineWidth=4;
+    ctx.beginPath(); ctx.arc(0,0,28,0,Math.PI*2); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(-28,0); ctx.lineTo(28,0); ctx.moveTo(0,-28); ctx.lineTo(0,28); ctx.stroke();
+    ctx.restore();
 
-## 🚀 Como Visualizar
+    angle += 0.05; sparkPhase += 0.08;
+    requestAnimationFrame(drawEngine);
+}
+drawEngine();
 
-🌐 **Acesse o site oficial do projeto:**  
-👉 [https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/](https://luftfahrzeuginstandhaltung.github.io/lexkomendiraircraft/)
+// === TELEMETRIA ===
+const altInput = document.getElementById('altInput');
+const spdInput = document.getElementById('spdInput');
+const pitchInput = document.getElementById('pitchInput');
+const fovInput = document.getElementById('fovInput');
 
-1. Acesse o link acima
-2. Navegue pelas seções
-3. Nas pranchas → clique em **"Gerar & Baixar PNG"** para salvar cada prancha
+function calc() {
+    const h = +altInput.value, v = +spdInput.value, pitchDeg = +pitchInput.value, fovDeg = +fovInput.value;
+    document.getElementById('altVal').innerText = `${h} m`;
+    document.getElementById('spdVal').innerText = `${v} km/h`;
+    document.getElementById('pitchVal').innerText = `${pitchDeg}°`;
+    document.getElementById('fovVal').innerText = `${fovDeg}°`;
 
----
+    const pitchRad = Math.abs(pitchDeg) * Math.PI/180;
+    const fovRad = fovDeg * Math.PI/180;
+    const slant = pitchRad < 0.01 ? h : h / Math.sin(pitchRad);
+    const swath = 2 * slant * Math.tan(fovRad/2);
+    const area = swath * (swath/1.5);
 
-## ⚠️ Isenção de Responsabilidade (*Disclaimer*)
+    document.getElementById('outSlant').innerText = `${Math.round(slant)} m`;
+    document.getElementById('outSwath').innerText = `${Math.round(swath)} m`;
+    document.getElementById('outArea').innerText = `${Math.round(area).toLocaleString('pt-BR')} m²`;
+    return {h, v, slant, area};
+}
+[altInput, spdInput, pitchInput, fovInput].forEach(i => i.addEventListener('input', calc));
 
-- **Estudo conceitual preliminar** — destina-se exclusivamente a fins de pesquisa, demonstração tecnológica e desenvolvimento acadêmico/experimental.
-- Não substitui manuais de voo, instruções formais de manutenção ou documentos oficiais de projeto e certificação aeronáutica.
-- Baseado na plataforma Berkut 360 — todos os direitos de referência preservados.
+// === TABELA DE REGISTRO ===
+const tableBody = document.getElementById('telemetryTable');
+document.getElementById('addLogBtn').addEventListener('click', () => {
+    const d = calc();
+    const now = new Date().toLocaleTimeString('pt-BR');
+    const altJit = Math.round(d.h + (Math.random()*6-3));
+    const spdJit = Math.round(d.v + (Math.random()*4-2));
+    const status = Math.random()>0.1 ? ['RASTREANDO','MONITORANDO','VARRENDO'][Math.floor(Math.random()*3)] : 'CALIBRANDO';
+    const statusClass = status==='CALIBRANDO' ? 'bg-amber-500/20 text-amber-400' : 'bg-emerald-500/20 text-emerald-400';
+    
+    const row = document.createElement('tr');
+    row.className = 'hover:bg-slate-800/50 transition';
+    row.innerHTML = `
+        <td class="p-3 font-mono text-slate-400">${now}</td>
+        <td class="p-3">${altJit}</td>
+        <td class="p-3">${spdJit}</td>
+        <td class="p-3 font-mono">${Math.round(d.slant)}</td>
+        <td class="p-3 font-mono">${Math.round(d.area).toLocaleString('pt-BR')}</td>
+        <td class="p-3"><span class="px-2 py-0.5 rounded text-[10px] font-bold ${statusClass}">${status}</span></td>
+    `;
+    tableBody.prepend(row);
+    if (tableBody.children.length > 6) tableBody.removeChild(tableBody.lastChild);
+});
 
----
-
-**LexKomendirAirCraft™ — AK‑ARANY SAS ALPHA**  
-*Águia Dourada voando sempre mais alto* 🦅✨
+calc();
+</script>
+</body>
+</html>
