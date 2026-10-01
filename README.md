@@ -1,44 +1,33 @@
-# Nome do Projeto
+# ✈️ AK-ARANY SAS ALPHA — Plataforma de Patrulha
 
-> Uma breve descrição em uma ou duas frases sobre o que este projeto faz.
-
----
-
-## 📌 Sumário
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
-- [Como Executar](#-como-executar)
-- [Como Usar](#-como-usar)
-- [Licença](#-licença)
+> Projeto experimental e conceitual baseado na geometria do **Berkut 360**, focado em modernização, telemetria e análise aeronáutica.
 
 ---
 
-## 🚀 Sobre o Projeto
+## 📌 Visão Geral
 
-Descreva aqui com mais detalhes o objetivo do projeto, qual problema ele resolve e quais são as suas principais funcionalidades.
+O **AK-ARANY SAS ALPHA** é uma interface web interativa desenvolvida para simulação de patrulha e telemetria aeronáutica. O projeto conta com:
+
+- **Planta Motriz Animada:** Representação em Canvas do motor ULPower UL350iS (130 HP) em operação.
+- **Calculadora de Telemetria:** Ajuste de altitude, velocidade, inclinação do gimbal e campo de visão com cálculo em tempo real de alcance, faixa e área coberta.
+- **Registro de Patrulha:** Histórico dinâmico de capturas com status operacional.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-Este projeto foi desenvolvido com as seguintes tecnologias:
-
-- [HTML5](https://developer.mozilla.org/pt-BR/docs/Web/HTML) / [CSS3](https://developer.mozilla.org/pt-BR/docs/Web/CSS) / [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-- [Node.js](https://nodejs.org/)
-- [Git](https://git-scm.com/)
+- **HTML5 & JavaScript (ES6+):** Estrutura e lógica em arquivo único.
+- **Tailwind CSS:** Estilização responsiva e tema escuro.
+- **HTML5 Canvas API:** Animação gráfica do motor boxer.
+- **FontAwesome 6:** Ícones vetoriais da interface.
 
 ---
 
-## 🔧 Como Executar
+## 📂 Estrutura do Repositório
 
-### Pré-requisitos
-
-Antes de começar, você precisará ter instalado em sua máquina:
-* [Git](https://git-scm.com)
-* [Node.js](https://nodejs.org/) (se aplicável)
-
-### Passo a passo
-
-1. **Clone este repositório:**
-   ```bash
-   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
+```text
+lexkomendiraircraft/
+├── index.html                         ← Aplicação completa
+├── assets/
+│   └── capa_pista_lexkomendir.webp.png  ← Imagem de capa
+└── README.md                          ← Esta documentação
